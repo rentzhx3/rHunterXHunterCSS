@@ -1,0 +1,240 @@
+@import (reference) "constants";
+@import (reference) "test";
+
+.animStatus() {
+  visibility: visible;
+  width: 50px;
+  height: 150px;
+  //  margin-top: -500px;
+  top: -130px; //125 -5
+  left: -17px; //15 -2
+  z-index: 999999 !important;
+  //background: @sprite 0 -425px !important;
+}
+
+@keyframes thunderbolt {
+  from {
+    .animStatus;
+    background: @sprite 0 -425px;
+  }
+  to {
+    .animStatus;
+    background: @sprite -800px -425px;
+
+  }
+}
+
+@keyframes thunderboltKillua {
+  @height: -172px;
+  0% {
+    width: 44px;
+    height: 58px;
+    top: -15px;
+    left: -15px;
+    background: @downvote;
+    visibility: visible;
+
+  }
+  20% {
+    //left: -15px;
+  }
+  20% {
+    //left: 6px;
+    left: -15px;
+    top: -15px;
+  }
+  25% {
+    background: @downvote;
+  }
+  25.001% {
+    background: @downvote2;
+  }
+
+  //25% {
+  //  height: @height *.80;
+  //}
+  //40% {
+  //  height: @height *.9;
+  //}
+
+  40% {
+    left: 6px;
+    top: @height;
+  }
+
+  60% {
+    background: @downvote2;
+  }
+  60.001% {
+    background: @downvote3;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 44px;
+    height: 58px;
+    background: @downvote3;
+    top: @height;
+    left: 6px;
+    visibility: visible;
+  }
+
+}
+
+@keyframes jajankenBall {
+  0% {
+    visibility: visible;
+    top: -82px;
+    background: @jajanken1;
+    opacity: 0.6;
+    transform: rotate(0deg);
+  }
+  ///TEST
+  3.2% {
+    background: @sprite 0 -382px
+  }
+  3.201%, 6.4% {
+    background: @sprite -40px -382px
+  }
+  6.401%, 9.6% {
+    background: @sprite -80px -382px
+  }
+  12.8%, 9.601% {
+    background: @sprite -120px -382px
+  }
+  12.801%, 16% {
+    background: @sprite -160px -382px
+  }
+  16.001%, 19.2% {
+    opacity: 0.8;
+    background: @sprite -200px -382px
+  }
+  19.201%, 22.4% {
+    background: @sprite -240px -382px
+  }
+  22.401%, 25.6% {
+    background: @sprite -280px -382px
+  }
+  25.601%, 28.8% {
+    background: @sprite -320px -382px
+  }
+  28.801%, 32% {
+    background: @sprite -360px -382px
+  }
+  32.001%, 35.2% {
+    background: @sprite -400px -382px
+  }
+  35.201%, 38.4% {
+    background: @sprite -440px -382px
+  }
+  38.401%, 41.6% {
+    background: @sprite -480px -382px
+  }
+  41.601%, 44.8% {
+    background: @sprite -520px -382px
+
+  }
+  44.801% {
+    background: @sprite -560px -382px;
+    transform: rotate(360deg);
+
+  }
+
+  //  .jajankenBallAnim(@n:14);
+  60% {
+    opacity: 1;
+    background: @sprite -560px -382px;
+  }
+  65% {
+    top: -82px;
+  }
+  85% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    top: -350px;
+    background: @sprite -560px -382px;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    top: -350px;
+    opacity: 0;
+    background: @sprite -560px -382px;
+  }
+}
+
+@keyframes jajankenGon {
+  0% {
+    top: -50+15px;
+    left: -2px;
+    width: 25px;
+    height: 50px;
+    background: @upvote;
+  }
+  20% {
+    background: @upvote;
+  }
+  20.001%, 73% {
+    background: @upvote2;
+  }
+  73.001% {
+    background: @upvote3;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    top: -50+15px;
+    left: -2px;
+    width: 25px;
+    height: 50px;
+    background: @upvote3;
+  }
+  90.001% {
+    top: -2px;
+    left: 0;
+    width: 15px;
+    height: 14px;
+    background: @defaultUpvote;
+  }
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    background: @defaultUpvote;
+
+  }
+}
+
+@keyframes submitFlipFront {
+  0%, 40% {
+
+    transform: rotateY(-180deg);
+  }
+  100% {
+    border: none !important;
+    transform: rotateY(0);
+
+  }
+}
+
+@keyframes submitFlipBack {
+
+  0%, 58% {
+    visibility: visible !important;
+  }
+  58.001% {
+    visibility: hidden !important;
+  }
+  100% {
+    visibility: hidden !important;
+  }
+
+}

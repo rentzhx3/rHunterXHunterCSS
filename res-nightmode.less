@@ -1,0 +1,684 @@
+@import (reference) "constants";
+@import (reference) "animations";
+@import (reference) "hxhlanguageconstants";
+
+@nActiveElementColor: white;
+@nlinkColor: whitesmoke;
+@nlinkColorVisited: gray;
+@nspoilerTitleColor: @spoilerTagColor;
+@nbackgroundCardColor: #161616;
+@nBoxShadowColor: #414141;
+@nSpoilerTagColor: whitesmoke;
+@buttonColor: @nbackgroundCardColor*3;
+.res-nightmode {
+  background-color: #222222 !important;
+  .content {
+    background-color: #222222;
+  }
+  a.author {
+    color: @nlinkColor !important;
+  }
+  .footer-parent {
+    .footer {
+      border-color: @buttonColor;
+      box-shadow: none;
+      background: @buttonColor;
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .thing {
+    background-color: @buttonColor !important;
+    .newComments {
+      color: white;
+    }
+    &.comment {
+      box-shadow: #222 0 2px 4px 0;
+    }
+    .title {
+      a {
+        color: #FFFFFF*0.9 !important;
+        &:visited {
+          color: #FFFFFF*0.7 !important;
+        }
+      }
+    }
+    .entry {
+      .tagline {
+        color: #FFFFFF*0.7;
+      }
+      &.RES-keyNav-activeElement {
+        .title {
+          a {
+            color: #FFFFFF *.95 !important;
+          }
+
+        }
+        .tagline {
+          color: #FFFFFF*0.7 !important;
+        }
+      }
+    }
+  }
+  .nsfw-stamp acronym:after {
+    color: @nSpoilerTagColor;
+    border: 1px solid @nSpoilerTagColor !important;
+  }
+  #sr-header-area {
+    background-color: @buttonColor;
+  }
+  #RESShortcutsEditContainer {
+    background-color: @buttonColor !important;
+    * {
+      color: #ffffff !important;
+      background-color: transparent !important;
+    }
+  }
+  .infobar {
+    .md {
+      color: white;
+    }
+
+  }
+
+  ::selection {
+    background-color: white;
+    color: black;
+
+  }
+  .RES-keyNav-activeElement {
+    border-color: @nActiveElementColor !important;
+  }
+
+  &.comments-page {
+    .content {
+      .link {
+        .RES-keyNav-activeElement {
+          background-color: transparent !important;
+
+        }
+      }
+    }
+  }
+
+  .link .title, .link.over18 .title {
+    color: @nlinkColor;
+    &:visited {
+      color: @nlinkColorVisited;
+    }
+  }
+
+  .thing {
+    .score {
+      color: white;
+    }
+
+  }
+  //link flairs
+  .linkflairlabel {
+    background-color: black;
+    color: white;
+  }
+  .linkflair-a .linkflairlabel {
+    border-color: #FF9800;
+  }
+  .linkflair-b .linkflairlabel {
+    border-color: @red;
+  }
+  .linkflair-c .linkflairlabel {
+    border-color: @green;
+  }
+  .linkflair-d .linkflairlabel {
+    border-color: #aaa;
+  }
+  .linkflair-e .linkflairlabel {
+    border-color: @blue;
+  }
+  .linkflair-f .linkflairlabel {
+    border-color: white;
+  }
+  .linkflair-g .linkflairlabel {
+    border-color: @purple;
+  }
+  .linkflair-h .linkflairlabel {
+    border-color: @darkerRed;
+  }
+
+  //sidebar
+  .side {
+    box-shadow: 0 1px 3px @nBoxShadowColor;
+    background-color: @buttonColor !important;
+    a[title="FAQ"], a[title="SUBMIT"] {
+      box-shadow: 0 1px 3px @nBoxShadowColor;
+      background-color: @nbackgroundCardColor;
+      color: #ffffff;
+      &:hover {
+        background-color: @readTheRulesButtonColorHover;
+        box-shadow: @nBoxShadowColor 0 1px 10px 0;
+      }
+    }
+    a[title="SUBMIT"] {
+      background-color: @nbackgroundCardColor;
+      &:after {
+        box-shadow: @nBoxShadowColor 0 1px 80px 0;
+        background-color: @nbackgroundCardColor;
+        color: #FFF;
+      }
+      &:hover {
+        background-color: @submitButtonColorHover;
+      }
+    }
+
+    .md {
+      pre {
+        background-color: @nbackgroundCardColor;
+        code {
+          color: whitesmoke !important;
+        }
+      }
+    }
+    .linkinfo {
+      background-color: @buttonColor;
+    }
+
+    .redditname {
+      background-color: @buttonColor !important;
+    }
+    .subButtons {
+      span {
+        background-color: @nbackgroundCardColor*3 !important;
+      }
+    }
+
+    .md {
+      //custom headers
+      h6 {
+        //announcement
+        a {
+          background-color: @buttonColor;
+          color: #ffffff;
+          &:hover {
+            background-color: @darkerRed;
+            color: white
+          }
+        }
+      }
+      //latest ep/chapter
+
+      h5, h4 {
+        a {
+          background-color: @buttonColor;
+          color: white;
+          text-shadow: #000000 1px 0 1px;
+          &:hover {
+            background-color: @latestFloatingColor;
+          }
+        }
+      }
+    }
+    h2 {
+      border-color: #FFFFFF*0.7;
+      a {
+        color: whitesmoke;
+      }
+      & + * {
+        border-color: #FFFFFF*0.7 !important;
+      }
+      & ~ p, & ~ pre {
+        border-color: #FFFFFF*0.7;
+      }
+      & ~ p {
+        &:last-of-type {
+          border-color: #FFFFFF*0.7;
+        }
+      }
+    }
+    .leavemoderator, .flairtoggle, .content {
+      background-color: @buttonColor !important;
+    }
+    .flairselector {
+      li {
+        border-color: @buttonColor !important;
+      }
+    }
+
+    .titlebox {
+      background-color: @buttonColor;
+      .md {
+        & > ul {
+          background: transparent !important;
+          //faq
+          & > li {
+            color: #FFFFFF*0.7;
+            &:first-child {
+              background-color: @nbackgroundCardColor !important;
+              &:hover {
+                background-color: @buttonColor/2 !important;
+                a {
+                  background-color: @buttonColor/2 !important;
+                }
+              }
+              a {
+                background-color: @nbackgroundCardColor !important;
+                color: #ffffff;
+              }
+            }
+            ul {
+              li {
+                background-color: @nbackgroundCardColor;
+                color: #ffffff !important;
+                &:hover {
+                  background-color: @buttonColor/2 !important;
+                }
+                a {
+                  color: #ffffff;
+                }
+
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .helplink {
+      color: white;
+      & + .title {
+        h1 {
+          &:before {
+            color: @threeStarColor;
+          }
+        }
+
+      }
+      & ~ .content {
+        border: #ffffff;
+        border-radius: @defaultBorderRadius;
+        background: @nbackgroundCardColor !important;
+        li {
+          a {
+            color: white !important;
+          }
+        }
+        &:hover {
+          background-color: @nbackgroundCardColor*2 !important;
+        }
+      }
+
+    }
+
+    .sidecontentbox {
+      border-color: @buttonColor;
+      a {
+        background-color: transparent;
+      }
+    }
+    #search {
+      #searchexpando {
+        background-color: @nbackgroundCardColor;
+        border-color: @buttonColor;
+        color: #ffffff;
+      }
+      input[type=text] {
+        background: @hxhSearchLight;
+      }
+    }
+  }
+
+  //banner //tabs
+
+  #header {
+    #header-bottom-right {
+      //top username
+      background-color: @buttonColor !important;
+    }
+    ul.tabmenu {
+      border: 0 !important;
+      background-color: @buttonColor;
+      li {
+        &.selected {
+          background-color: @nbackgroundCardColor;
+          a {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  #RESDropdownOptions {
+    color: white !important;
+    background-color: @buttonColor !important;
+    li {
+      color: white !important;
+      a {
+        color: #ffffff;
+      }
+      &:hover {
+        background-color: @nbackgroundCardColor !important;
+        a {
+          background-color: @nbackgroundCardColor;
+        }
+      }
+    }
+  }
+
+  #RESMainGearOverlay {
+    background-color: @darkerGreen !important;
+  }
+
+  //flair selector
+
+  .side {
+    .flairselector {
+      h2 {
+        background-color: @nbackgroundCardColor;
+        &:hover {
+          background-color: @buttonColor !important;
+        }
+      }
+      li {
+        &:hover {
+          background-color: @buttonColor;
+        }
+      }
+      button {
+        background-color: @buttonColor;
+        border-color: @nbackgroundCardColor;
+        color: white;
+        &:hover {
+          background-color: @nbackgroundCardColor;
+        }
+
+      }
+    }
+
+  }
+  //spoiler tag
+  a[href='/a'], a[href='/m'], a[href='/t'], a[href='/s'] {
+    background-color: @nSpoilerTagColor !important;
+    color: #000000 !important;
+    &:hover {
+      color: slategray !important;
+      background-color: transparent !important;
+      &:after {
+        color: white !important;
+        background-color: transparent;
+      }
+
+    }
+
+  }
+
+  .templateComent(@color) {
+    color: white !important;
+    //    background-color: @color !important;
+    .md {
+      color: white !important;
+      blockquote {
+        color: #ffffff *.7 !important;
+      }
+    }
+
+  }
+
+  &.comments-page .comment {
+    .templateComent(@commentBGColor*.99);
+  }
+
+  .wiki-page-content {
+    background-color: @buttonColor;
+    .toc {
+      & > ul {
+        box-shadow: #dddddd 0 2px 4px 0;;
+        background-color: #161616 *3;
+        a {
+          color: white;
+          &:visited {
+            color: white;
+          }
+
+        }
+      }
+
+    }
+  }
+  .wiki-page-content, .thing {
+
+    .md {
+      a {
+        color: #FF5722;
+        &:visited {
+          color: #FF5722*.8;
+        }
+      }
+      h1, h2, h3, h4, h5, li {
+        color: #dddddd !important;
+      }
+      h5 {
+        text-shadow: #aaa 1px 2px 1px;
+      }
+      table {
+        thead {
+          tr {
+            th {
+              color: white;
+              background-color: @buttonColor*.6;
+              &:hover {
+                color: white;
+                background-color: @nbackgroundCardColor;
+              }
+            }
+          }
+
+        }
+        tbody {
+          tr {
+            &:hover {
+              background-color: black;
+              cursor: default;
+            }
+            td {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.submit-page {
+
+    & > .content {
+      &:after {
+        background-color: @hunterLicenseColor/4;
+        border-color: @hunterLicenseColor/4;
+      }
+    }
+
+    .content {
+      background: none;
+      .formtabs-content {
+        border: none !important;
+        background-color: @hunterLicenseColor/4 !important;
+      }
+
+      .livePreview {
+        background-color: @nbackgroundCardColor;
+        color: white;
+      }
+
+      ul.tabmenu {
+        li {
+          background-color: @hunterLicenseColor/8;
+          border: none;
+          &.selected {
+            background-color: @hunterLicenseColor/4;
+            border-color: white;
+            a {
+              background-color: transparent;
+              color: transparent;
+            }
+          }
+          &:hover {
+            a {
+              color: lightgrey !important;
+              &:before {
+                opacity: 0 !important;
+              }
+            }
+          }
+
+          &:first-child {
+
+            a {
+              &:before {
+                background: @hxhHyperLinkWhite transparent;
+                opacity: 0.5;
+              }
+            }
+            box-shadow: -20px 0 4px -15px #3D3D3D/2 inset;
+            &.selected {
+              a {
+                &:before {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          &:last-child {
+            box-shadow: 20px 0 4px -15px #3D3D3D/2 inset;
+
+            a {
+              &:before {
+                background: @hxhTextWhite transparent;
+                opacity: 0.5;
+              }
+            }
+            &.selected {
+              a {
+                &:before {
+                  opacity: 1;
+                }
+              }
+            }
+
+          }
+        }
+
+      }
+
+      @strength: 0.7;
+      .roundfield {
+        color: #FFFFFF*@strength;
+        a {
+          color: #FFFFFF*@strength;
+        }
+
+        &#title-field {
+          .title {
+            //color: white;
+            opacity: @strength;
+            &:before {
+              background: @hxhTitleWhite;
+            }
+          }
+          &:hover {
+            .title {
+              color: white;
+            }
+          }
+        }
+        &#url-field {
+          .title {
+            color: transparent;
+            opacity: @strength;
+            &:before {
+              background: @hxhURLWhite;
+            }
+          }
+          &:hover {
+            .title {
+              color: white;
+
+            }
+
+          }
+          input[type="url"] {
+            &:valid {
+              background: #ffffff;
+            }
+            &:invalid {
+              background: @hxhPutYourLinkHere #ffffff no-repeat;
+            }
+            &:focus {
+              background: #ffffff none;
+            }
+          }
+        }
+        &#text-field {
+          .title {
+            color: transparent;
+            opacity: @strength;
+
+            &:before {
+              background: @hxhTextOptionalWhite;
+            }
+          }
+          &:hover {
+            .title {
+              color: white;
+            }
+          }
+
+        }
+      }
+    }
+    button {
+      background-color: @buttonColor !important;
+      border: solid 1px @nbackgroundCardColor !important;
+      &:hover {
+        background-color: @nbackgroundCardColor !important;
+      }
+    }
+
+  }
+
+  //@import (reference) "constants";
+
+  .combined-search-page {
+    .searchpane, .search-result-group-header {
+      background: @buttonColor;
+    }
+    .drop-choices {
+      background-color: @buttonColor;
+      border-color: @buttonColor;
+    }
+    .search-result {
+      background: @buttonColor;
+    }
+    .search-expando.collapsed {
+      &:before {
+        content: none;
+      }
+    }
+    .search-title {
+      color: @nlinkColor !important;
+      &:visited {
+        color: @nlinkColorVisited !important;
+      }
+    }
+    .md {
+      color: @nActiveElementColor !important;
+    }
+
+  }
+}
+
+//spoiler tags
+
+
+

@@ -1,0 +1,258 @@
+@import (reference) "users";
+
+a.author, a.userTagged {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a.author[href$="/F_G_E_S"],
+a.userTagged[href$="/F_G_E_S"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 14px !important;
+    background-color: #850000;
+    border: 2px solid #850000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: orange;
+    text-shadow: 3px 3px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-weight: bold !important;
+    content: "  FGES "
+  }
+}
+
+a.author[href$="/AutoModerator"],
+a.userTagged[href$="/AutoModerator"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    padding-left: 4px;
+    padding-right: 4px;
+    visibility: visible;
+    font-size: 14px !important;
+    background-color: @oneStarBG;
+    border: 2px solid @darkerRed;
+    border-radius: @defaultBorderRadius;
+    margin: 0 0 50px 0;
+    color: @oneStarColor;
+    font-family: georgia, serif;
+    font-weight: normal !important;
+    content: "  Milluki Zoldyck "
+  }
+}
+
+a.author[href$="/TruthTaco"],
+a.userTagged[href$="/TruthTaco"] {
+  visibility: hidden;
+  font-size: 0;
+  content: ""
+}
+
+a.author[href$="/TruthTaco"]:before,
+a.userTagged[href$="/TruthTaco"]:before {
+  visibility: visible;
+  font-size: 14px !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(247, 247, 247, 1) 21%, rgba(247, 247, 247, 1) 30%, rgba(247, 247, 247, 1) 47%, rgba(247, 247, 247, 1) 67%, rgba(240, 240, 240, 1) 100%);
+  //  background-image: url(%%hJAsQ-gz2BST9UJz%%);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 0 0 50px 0;
+  color: #ff2400;
+  font-family: georgia;
+  font-weight: normal !important;
+  content: "  TruthTaco  "
+}
+
+a.author[href$="/HunterBot"],
+a.userTagged[href$="/HunterBot"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:after {
+    visibility: visible;
+    font-size: 16px !important;
+    background-color: black;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 0 0 50px 0;
+    color: white;
+    font-family: georgia;
+    text-shadow: 3px 3px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-weight: normal !important;
+    content: "  Chad from Accounting  "
+  }
+}
+
+a.author[href$="/YonkouProductions"]:after,
+a.userTagged[href$="/YonkouProductions"]:after {
+  visibility: visible;
+  font-size: 14px !important;
+  background-color: transparent;
+  color: #3399FF;
+  font-family: PalatinoLinotype;
+  font-weight: bold !important;
+  content: " Literally Meruem  "
+}
+
+a.author[href$="/thelongestlurker"]:after,
+a.userTagged[href$="/thelongestlurker"]:after {
+  visibility: visible;
+  font-size: 14px !important;
+  background-color: transparent;
+  color: #FF7519;
+  font-family: Impact, Charcoal, sans-serif;
+  font-style: italic;
+  content: " ink hunter "
+}
+
+a.author[href$="/pitouxpitou"]:after,
+a.userTagged[href$="/pitouxpitou"]:after {
+  visibility: visible;
+  font-size: 14px !important;
+  background-color: transparent;
+  color: #990066;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold !important;
+  content: " <3 meow ~  "
+}
+
+a.author[href$="/Di_Bello"],
+a.userTagged[href$="/Di_Bello"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 13px !important;
+    background-color: #9900CC;
+    border: 1px solid #204270;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-family: georgia;
+    font-weight: bold !important;
+    content: " Di_Bello "
+  }
+  &::after {
+    visibility: visible;
+    font-size: 14px !important;
+    background-color: transparent;
+    color: gray;
+    font-family: PalatinoLinotype;
+    font-weight: bold !important;
+    content: " Blacklist Hunter  "
+  }
+}
+
+a.author[href$="/screwbacca"],
+a.userTagged[href$="/screwbacca"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 14px !important;
+    background-color: #ffffff;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: #000000;
+    font-family: georgia, sans-serif;
+    font-weight: BOLD !important;
+    content: " beyond bacca "
+  }
+
+  //  &:after {
+  //    visibility: visible;
+  //    font-size: 14px !important;
+  //    background-color: transparent;
+  //    color: #e6c200;
+  //    font-family: PalatinoLinotype, sans-serif;
+  //    font-weight: bold !important;
+  //    content: " -3 Star Hunter  "
+  //  }
+}
+
+a.author[href$="/Whiterhino123"],
+a.userTagged[href$="/Whiterhino123"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 14px !important;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: #FF00FF;
+    font-family: georgia, sans-serif;
+    font-weight: normal !important;
+    content: " Le trollerino "
+  }
+}
+
+a.author[href$="/FlyingGoatee"],
+a.userTagged[href$="/FlyingGoatee"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 13px !important;
+    background-color: #83B2FC;
+    border: 1px solid #204270;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-family: georgia, sans-serif;
+    font-weight: bold !important;
+    content: " FlyingGoatee "
+  }
+}
+
+a.userTagged[href$="/Aloss"]:before,
+a.author[href$="/Aloss"]:before {
+  visibility: visible;
+  font-size: 12px !important;
+  background-color: transparent;
+  margin: 0 0 50px 0;
+  color: green;
+  font-family: georgia, sans-serif;
+}
+
+a.author[href$="/rentzhx3"],
+a.userTagged[href$="/rentzhx3"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 12px !important;
+    color: white;
+    text-shadow: 1px 1px 0 @orange,-1px -1px 0 @orange,1px -1px 0 @orange, -1px 1px 0 @orange;
+    font-weight: bold !important;
+    content: "rentzhx3"
+  }
+}

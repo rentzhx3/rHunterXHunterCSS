@@ -1,0 +1,295 @@
+@import (reference) "constants";
+
+.side, .content {
+  margin-top: -15px;
+}
+
+.side ~ .content {
+  //sidebar width+ sidebar padding +10px margin
+  margin-right: @sidebarWidth + 30px+10px !important;
+}
+
+.thing.stickied, .thing.stickied a.title {
+  color: @stickyTextColor !important;
+  font-weight: normal;
+
+}
+
+.content {
+  margin-left: 10px;
+}
+
+.comments-page {
+  .link {
+    .usertext-body {
+      padding-left: 20px;
+      padding-right: 30px;
+      .md {
+        border-radius: @defaultBorderRadius;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    .RES-keyNav-activeElement {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.link .title {
+  color: @linkColor;
+  &:visited {
+    color: @linkColorVisited;
+  }
+}
+
+.linklisting {
+  box-shadow: @defaultBoxShadow;
+  .thing {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    border-radius: @defaultBorderRadius;
+    background: @cardBackgroundColor;
+    border-bottom: solid 1px #eeeeee;
+    //  border-radius: 3px;
+    position: relative;
+    overflow: visible;
+    .rank {
+      display: none;
+    }
+    .entry {
+      vertical-align: middle;
+      border-radius: @defaultBorderRadius;
+      padding-top: 25px !important;
+      padding-bottom: 25px !important;
+      border-right: solid 6px transparent;
+      transition: border-color 200ms;
+      &.RES-keyNav-activeElement {
+        border-color: @activeElementColor;
+        background-color: transparent !important;
+      }
+    }
+    &:not(:first-child), &:not(:first-child) .entry {
+      border-radius: 0;
+    }
+    &:first-child, &:first-child .entry {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .domain {
+    margin-left: 0;
+  }
+  .self {
+    .domain {
+      display: none;
+    }
+  }
+}
+
+.marknsfw-button .togglebutton:after {
+  content: "spoiler";
+  font-size: 10px
+}
+
+.unmarknsfw-button .togglebutton:after {
+  content: "un-spoiler";
+  font-size: 10px
+}
+
+.stamp {
+  border: 0 !important;
+}
+
+.nsfw-stamp acronym {
+  visibility: hidden;
+  font-size: 0 !important
+}
+
+.nsfw-stamp acronym:after {
+  content: "SPOILERS";
+  visibility: visible;
+  color: @spoilerTagColor;
+  font-size: x-small;
+  text-decoration: none;
+  padding: 0 2px;
+  border: 1px solid @spoilerTagColor !important;
+  border-radius: @defaultBorderRadius;
+  margin-left: -3px;
+  box-shadow: none !important
+}
+
+.link {
+  position: relative;
+  .entry {
+    margin-left: 40px !important;
+    padding-top: 7px !important;
+  }
+  &.last-clicked {
+    overflow: visible !important;
+  }
+}
+
+.thing .thumbnail {
+  margin-left: -80px;
+}
+
+.listing-page, div[role=main] {
+  .thing.link:first-child {
+    .thumbnail {
+      min-height: 70px !important;
+    }
+    .midcol {
+      margin-top: 15px !important;
+    }
+  }
+}
+
+.thumbnail {
+  position: relative !important;
+  //display: inline-block;
+  //overflow: visible;
+  min-height: 96px;
+  img, &:after {
+    border-radius: @defaultBorderRadius;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: box-shadow 300ms;
+    &:hover {
+      box-shadow: @defaultBoxShadow;
+    }
+  }
+
+  &.self, &.nsfw, &.default {
+    visibility: hidden;
+    &:after {
+      content: "";
+      opacity: 0.6;
+      //        background-size: contain;
+      display: block;
+      width: 70px;
+      height: 70px;
+      visibility: visible;
+    }
+  }
+  &.default:after,
+  &.self:after {
+    background: @selfPostThumb no-repeat;
+  }
+  &.nsfw {
+    padding-bottom: 0;
+    &:after {
+      height: 56px;
+      background: @spoilerPostThumb no-repeat;
+
+    }
+  }
+
+}
+
+.search-page {
+  .thumbnail {
+    position: relative;
+  }
+}
+
+.marknsfw-button, .unmarknsfw-button {
+  font-size: 0;
+}
+
+.thing {
+  position: relative;
+  //overflow: visible;
+  .newComments {
+    color: @newCommentsColor;
+  }
+  &.stickied {
+    .stickied-tagline {
+      display: none;
+    }
+
+  }
+  .score.likes {
+    color: dodgerblue;
+  }
+
+  .entry {
+    overflow: visible;
+    margin-left: 18px;
+  }
+  .midcol {
+    overflow: visible;
+  }
+  &.link {
+    .midcol {
+      margin: 25px 85px auto 15px;
+    }
+  }
+  .arrow {
+    position: relative;
+    //overflow: visible;
+    &.upmod {
+      background-image: none !important;
+      z-index: 100 !important;
+      &:before {
+        padding: 0 !important;
+        z-index: 90 !important;
+        content: '';
+        top: -2px;
+        left: 0;
+        background: @defaultUpvote no-repeat;
+        width: 15px;
+        height: 14px;
+        display: inline-block;
+        position: relative;
+        animation: jajankenGon 2.5s none;
+        visibility: visible;
+      }
+      &:after {
+        z-index: 100 !important;
+        display: inline-block;
+        position: relative;
+        content: '';
+        background: @jajanken1 no-repeat;
+        width: 40px;
+        height: 40px;
+        top: -82px;
+        left: -5px;
+        animation: jajankenBall (2500ms *.8);
+        animation-delay: (2500ms *0.2);
+
+      }
+    }
+    @killuaTime: 2600ms;
+
+    &.downmod {
+      background-image: none;
+      z-index: 100 !important;
+      &:before {
+        position: absolute;
+        padding: 0 !important;
+        z-index: 99 !important;
+        content: '';
+        top: -2px;
+        left: 0;
+        height: 150px;
+        background: transparent;
+        display: inline-block;
+        animation: thunderbolt 800ms steps(16) none;
+        animation-delay: @killuaTime*.61;
+      }
+      &:after {
+        animation: thunderboltKillua @killuaTime none;
+        position: relative;
+        display: inline-block;
+        content: '';
+        width: 15px;
+        height: 14px;
+        background: @defaultDownvote;
+
+      }
+    }
+  }
+}

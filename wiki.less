@@ -1,0 +1,100 @@
+@import (reference) "constants";
+
+@fontSize: 28px;
+
+.wiki-page .wiki-page-content {
+  box-shadow: @defaultBoxShadow;
+  background: @bgWiki white;
+  margin-right: 15px;
+  background-size: 100%;
+  padding: 20px;
+  border: solid 1px #aaaaaa;
+  .toc {
+    & > ul {
+      border-radius: @defaultBorderRadius;
+      box-shadow: #dddddd 0 2px 4px 0;;
+      background-color: #161616 *3;
+      a {
+        color: white;
+      }
+    }
+
+  }
+}
+
+.wiki-page-content, .thing {
+  .md {
+    a {
+      color: @innerLinkColor;
+      &:visited {
+        color: @innerLinkColorVisited;
+      }
+    }
+    hr {
+      height: 1px;
+      background-color: #eeeeee;
+    }
+    pre {
+      background-color: transparent;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: Times, serif;
+      font-weight: bold;
+      color: #000000;
+      letter-spacing: 1px;
+      //    text-shadow: @primaryColorDarker 0 3px 2px;
+      text-align: center;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: (@fontSize - 8px);
+    }
+    h2 {
+      //      border-radius: @defaultBorderRadius;
+      //      color: @primaryColorDarker;
+      font-size: (@fontSize - 6px);
+    }
+    h3 {
+      font-size: (@fontSize - 4px);
+    }
+    h4 {
+      font-style: italic;
+      font-size: (@fontSize - 2px);
+    }
+    h5 {
+      font-family: verdana, arial, helvetica, sans-serif;
+      text-shadow: @wikititleShadowColor 1px 1px 1px;
+      text-align: center;
+      color: @wikiTitleColor;
+      //      color: #1B5E20;
+      font-size: @fontSize;
+    }
+    table {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      thead {
+        tr {
+          th {
+            color: white;
+            background-color: @tableHeaderColor;
+            &:hover {
+              color: white;
+              background-color: @tableHeaderColorHover;
+            }
+          }
+        }
+
+      }
+      tbody {
+        tr {
+          &:hover {
+            background-color: whitesmoke;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

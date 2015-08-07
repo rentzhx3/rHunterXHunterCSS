@@ -1,0 +1,189 @@
+@import (reference) "constants";
+@import "submissions";
+@import "animations";
+@import "users";
+@import "banner";
+@import "comments";
+@import "sidebar";
+@import "mod_stuff";
+@import "submit-page";
+@import "flairs";
+@import "linkflairs";
+@import "users-custom";
+@import "wiki";
+@import "res-nightmode";
+@import "search-page";
+
+&::selection {
+  color: #ffffff;
+  background-color: @defaultSelecionColor;
+}
+
+body {
+  background-color: @defaultBackgroundColor;
+  overflow-x: hidden;
+
+  #sr-header-area {
+    background-color: @bannerBGColor;
+    a, span {
+      color: #ffffff;
+    }
+    .sr-list + a {
+      right: 0;
+      background-color: @bannerBGColor;
+    }
+    .RESShortcutsCurrentSub {
+      font-weight: bold;
+      color: #ffffff !important;
+    }
+  }
+  #RESShortcutsEditContainer {
+    background-color: @bannerBGColor;
+    * {
+      color: #ffffff;
+      background-color: transparent;
+    }
+  }
+}
+
+//spoiler tag
+a[href='/a'], a[href='/m'], a[href='/t'], a[href='/s'], a[href='/g'] {
+  background-color: @spoilerTagColor;
+  padding: 0 2px;
+  color: white !important;
+  border-radius: @defaultBorderRadius;
+  cursor: help;
+  transition: 200ms;
+  text-decoration: none !important;
+
+  &:after {
+    content: attr(title);
+    padding: 0 8px;
+    visibility: hidden;
+  }
+  &:hover {
+    color: slategray !important;
+    background-color: transparent;
+    &:after {
+      color: black;
+      background-color: transparent;
+      visibility: visible;
+
+    }
+
+  }
+
+  .entry {
+    margin-left: 124px;
+    overflow: visible;
+  }
+
+}
+
+.voteWeight {
+  background-color: transparent !important;
+}
+
+@keyframes slideOut {
+  0% {
+    left: -800px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 120%;
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(-400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-400px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+//noinspection ALL
+div#baconBit {
+  position: fixed;
+  width: 336px;
+  height: 145px;
+  left: -800px;
+  top: calc(~"50% - 72px") !important;
+  background: @logoHover;
+  z-index: 2147483646 !important;
+  //transition: all 100ms cubic-bezier(0.820, -0.555, 0.265, 1.605); /* custom */
+  //transition-timing-function: cubic-bezier(0.820, -0.555, 0.265, 1.605); /* custom */
+
+  &:before, &:after {
+    //top: calc(~"50% - 900px") !important;
+    content: '';
+    visibility: hidden;
+    display: block !important;
+    position: fixed !important;
+    top: -200px;
+    opacity: 1;
+    height: 145px;
+    width: 336px;
+  }
+  &:before {
+    left: -50px !important;
+    width: 430px;
+    height: 170px;
+    background: @togashi1;
+  }
+  &:after {
+    background: @togashi2;
+    width: 430px;
+    left: -50px;
+  }
+
+  &.makeitrain {
+    animation: slideOut 10000ms linear forwards;
+    //animation-delay: 2s;
+    transform: rotate(0deg);
+    visibility: visible !important;
+    &:before, &:after {
+      animation: orbit 3000ms linear infinite;
+      visibility: visible;
+      top: calc(~"50% - 72px") !important;
+    }
+    &:after {
+      animation: orbit2 3000ms linear infinite;
+    }
+  }
+}
+
+.debuginfo {
+  display: none;
+}
+
+.footer-parent {
+  padding-top: 80px;
+  padding-bottom: 560px;
+  text-align: center;
+  width: 100%;
+  background: @bottomImage no-repeat bottom center;
+  margin-bottom: -1px;
+  .footer {
+    box-shadow: @defaultBoxShadow;
+    background: white;
+    border-radius: @defaultBorderRadius;
+  }
+}

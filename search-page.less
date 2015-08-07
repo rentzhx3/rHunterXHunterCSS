@@ -1,0 +1,42 @@
+@import (reference) "constants";
+
+.combined-search-page {
+  .searchpane, .search-result-group-header {
+    background: white;
+    box-shadow: @defaultBoxShadow;
+    margin-bottom: 0;
+    margin-right: 0;
+    border-radius: @defaultBorderRadius @defaultBorderRadius 0 0;
+  }
+  .search-result-group-header {
+    border-radius: 0 0 @defaultBorderRadius @defaultBorderRadius;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 10px;
+    border-bottom: none !important;
+  }
+  .search-result-group {
+    max-width: none;
+    padding: 0;
+  }
+  .drop-choices {
+    background-color: white;
+    box-shadow: @defaultBoxShadow;
+    border-radius: @defaultBorderRadius;
+    border-color: #eeeeee;
+  }
+  .search-result {
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: white;
+    box-shadow: @defaultBoxShadow;
+    border-radius: @defaultBorderRadius;
+    padding: 20px 20px;
+  }
+  .search-title {
+    color: @linkColor !important;
+    &:visited {
+      color: @linkColorVisited !important;
+    }
+  }
+}

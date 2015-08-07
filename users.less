@@ -1,0 +1,74 @@
+@import (reference) "constants";
+
+a.author {
+  color: @usernameColor !important;
+  &:visited {
+    color: @usernameColorVisited !important;
+  }
+}
+
+.customTextTemplate(@text,@color,@background,@user) {
+  a {
+    &.author[href$="/@{user}"], &.userTagged[href$="/@{user}"] {
+      &:after {
+        margin-left: 4px;
+        visibility: visible;
+        font-size: 11px !important;
+        color: @color !important;
+        font-weight: bold !important;
+        background-color: @background !important;
+        content: @text;
+        border-radius: 2px;
+        padding-right: 4px;
+        padding-left: 4px;
+      }
+    }
+  }
+
+}
+
+.starTemplate(@value,@color,@background,@user) {
+  .customTextTemplate("@{value} Star Hunter ", @color, @background, @user);
+}
+
+.oneStar(@user) {
+  .starTemplate("★ 1", @oneStarColor, @oneStarBG, @user);
+}
+
+.twoStars(@user) {
+  .starTemplate("★★ 2", @twoStarColor, @twoStarColorBG, @user);
+}
+
+.threeStars(@user) {
+  .starTemplate("★★★ 3", @threeStarColor, @threeStarBG, @user);
+}
+
+.oneStar("jikirga");
+//.oneStar("rentzhx3");
+.oneStar("nicotoy");
+.oneStar("thatindiankid81");
+.oneStar("pijayz");
+.oneStar("theKAR");
+.oneStar("KihelHeim");
+.oneStar("Bobduh");
+.oneStar("k_sedge");
+.oneStar("Aiman_D");
+.oneStar("ShureNensei");
+.oneStar("mynameisyonas");
+.twoStars("Gearfire");
+.twoStars("ccdnl1");
+.twoStars("mistflight");
+.twoStars("eskimo_friend");
+.twoStars("Anzujam");
+.twoStars("DirtyGolem");
+.twoStars("ccdnl1");
+
+.threeStars("F_G_E_S");
+.threeStars("TruthTaco");
+.threeStars("FlyingGoatee");
+
+.starTemplate("★★ 2.9", @twoStarColor, @twoStarColorBG, "zaoldyeck");
+.starTemplate("★★ 2.9", @twoStarColor, @twoStarColorBG, "Ranchi");
+.starTemplate("☆☆☆ -3", @threeStarColor, @threeStarBG, "screwbacca");
+
+.customTextTemplate("css hunter", @orange, transparent, "rentzhx3");

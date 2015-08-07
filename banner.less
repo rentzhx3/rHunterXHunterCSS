@@ -1,0 +1,243 @@
+@import (reference) "constants";
+
+#header-img-a {
+  position: relative;
+  top: 40px !important;
+  //margin-left: 2px !important;
+  //margin-right: 5px !important;
+  margin-left: 3px !important;
+  margin-right: -3px !important;
+
+}
+
+.infobar {
+  margin-right: 0;
+}
+
+#header {
+  margin-bottom: 100px;
+  border: 0;
+  .drop-choices {
+    background-color: @themeColor;
+    a {
+      color: white;
+      &:hover {
+        background-color: @themeColorDarker;
+      }
+    }
+  }
+
+  #header-bottom-left {
+    height: 170px;
+    font-size: xx-small;
+
+    background: #000000 @banner !important;
+    .pagename {
+      a {
+        font-size: 0;
+
+        &:after {
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms;
+          -o-transition: all 300ms;
+          transition: all 300ms;
+          transition-timing-function: cubic-bezier(0.18, 0.89, 0.29, 1.05);
+          content: '';
+          visibility: visible;
+          background: @logo;
+          padding-left: 336px;
+          padding-top: 145px;
+          top: 30px;
+          position: absolute;
+
+        }
+        &:hover {
+          &:after {
+            background: @logoHover;
+          }
+        }
+      }
+    }
+
+  }
+  #header-bottom-right {
+    //top username
+    background-color: @bannerBGColor !important;
+    top: 190px;
+    color: #ffffff !important;
+    right: 8px;
+    padding: 0;
+    line-height: 25px;
+    height: 25px;
+
+    * {
+      color: white;
+    }
+    a {
+      color: #fafafa;;
+      &.login-required {
+        text-decoration: underline;
+      }
+      &:visited {
+        color: #ffffff;
+      }
+      &:hover {
+        color: #ffffff*.9;
+      }
+    }
+
+    .beta-hint {
+      display: none !important;
+    }
+    .user {
+      margin-left: 14px;
+    }
+    #userbarToggle {
+      height: auto;
+      top: 1px;
+      bottom: 0;
+      background-color: transparent;
+      border: none;
+      color: #ffffff;
+      line-height: 22px;
+      &:hover {
+        color: #ffffff*.9;
+      }
+    }
+
+  }
+
+  ul.tabmenu {
+
+    width: 100%;
+    background-color: @bannerBGColor;
+    height: 25px;
+    left: 0;
+    top: 189px;
+    border: 1px solid @bannerBGColorHover;
+    padding: 0;
+    margin: 0 !important;
+    position: absolute;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-weight: normal;
+    li {
+      display: inline-block;
+      height: 25px;
+      text-transform: uppercase;
+      line-height: 25px;
+      margin: 0;
+      padding-right: 4px;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+
+      a {
+        color: white;
+        background-color: transparent;
+
+      }
+      &.selected {
+        background-color: @bannerBGColorHover;
+        a {
+          border: none;
+        }
+      }
+      &:hover {
+        background-color: @bannerBGColorHover !important;
+      }
+    }
+  }
+
+}
+
+.wiki-page, .listing-page {
+  ul.tabmenu {
+    li {
+      text-align: center;
+      padding-right: 9px;
+      background: @hxhLanguageSpriteLight no-repeat 100px 100px;
+      width: 50px;
+      transition: @animTime;
+      a {
+        color: transparent !important;
+        transition: color @animTime;
+      }
+      &:hover {
+        background: none;
+        color: white;
+        a {
+          color: white !important;
+        }
+      }
+      &:nth-child(1) {
+        //hot
+        width: 56px;
+        background-position: 0 -360px;
+      }
+      &:nth-child(2) {
+        //new
+        width: 50px;
+        background-position: 0 -385px;
+      }
+      &:nth-child(3) {
+        //rising
+        width: 80px;
+        background-position: 0 -409px;
+      }
+      &:nth-child(4) {
+        //controversial
+        width: 98px;
+        //background-position: 0 -435px;
+        background-position: 0 -434px;
+      }
+      &:nth-child(5) {
+        //top
+        width: 50px;
+        background-position: 0 -460px;
+      }
+      &:nth-child(6) {
+        //gilded
+        width: 54px;
+        background-position: 0 -485px;
+      }
+      &:nth-child(7) {
+        //wiki
+        width: 54px;
+        background-position: 0 -510px;
+      }
+      &:nth-child(8) {
+        //promoted
+        width: 90px;
+        background-position: 0 -535px;
+      }
+      &:nth-child(9) {
+        //res view images
+        width: 120px;
+        background-position: 0 -560px;
+      }
+    }
+  }
+
+}
+
+#RESDropdownOptions {
+  color: white !important;
+  background-color: @bannerBGColor !important;
+  li {
+    color: white !important;
+    a {
+      color: #ffffff;
+    }
+    &:hover {
+      background-color: @bannerBGColorHover !important;
+      a {
+        background-color: @bannerBGColorHover;
+      }
+    }
+  }
+}
+
+#RESMainGearOverlay {
+  background-color: @bannerBGColor !important;
+}
