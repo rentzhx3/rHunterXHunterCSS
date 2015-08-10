@@ -442,9 +442,17 @@
 
   .helplink {
     position: absolute;
-    margin-left: ((@sidebarWidth)/2)+20px;
+    right: 35px;
     margin-top: 11px !important;
     color: white;
+    font-size: 0;
+    &:before {
+      font-size: 10px;
+      content: 'message the zodiacs';
+      float: right;
+    }
+
+
 
     & + .title {
       margin-left: 4px;
@@ -456,10 +464,10 @@
         &:before {
           font-size: 12px;
           visibility: visible;
-          color: @threeStarColor;
+          color: @orange;
           text-transform: none;
           font-weight: bold;
-          content: 'Triple Hunters';
+          content: 'Zodiacs';
         }
       }
 
@@ -578,6 +586,9 @@
         opacity: 0;
       }
     }
+  }
+  .RESUserTag, .voteWeight {
+    display: none !important;
   }
 
 }
