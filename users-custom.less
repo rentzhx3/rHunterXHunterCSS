@@ -44,7 +44,7 @@ a.userTagged[href$="/AutoModerator"] {
     color: @oneStarColor;
     font-family: georgia, serif;
     font-weight: normal !important;
-    content: "  Milluki Zoldyck "
+    content: "  Sheep Zodiac Milluki Zoldyck "
   }
 }
 
@@ -52,24 +52,20 @@ a.author[href$="/TruthTaco"],
 a.userTagged[href$="/TruthTaco"] {
   visibility: hidden;
   font-size: 0;
-  content: ""
-}
 
-a.author[href$="/TruthTaco"]:before,
-a.userTagged[href$="/TruthTaco"]:before {
-  visibility: visible;
-  font-size: 14px !important;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(247, 247, 247, 1) 21%, rgba(247, 247, 247, 1) 30%, rgba(247, 247, 247, 1) 47%, rgba(247, 247, 247, 1) 67%, rgba(240, 240, 240, 1) 100%);
-  //  background-image: url(%%hJAsQ-gz2BST9UJz%%);
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin: 0 0 50px 0;
-  color: #ff2400;
-  font-family: georgia;
-  font-weight: normal !important;
-  content: "  TruthTaco  "
+  &:before {
+    visibility: visible;
+    margin: 0 0 50px 0;
+    color: white;
+    font-size: 12px !important;
+    background-color: @teal;
+    border: 1px solid @darkerTeal;
+    border-radius: 5px;
+    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-family: georgia, serif;
+    font-weight: bold !important;
+    content: ' Boar Zodiac TruthTaco ';
+  }
 }
 
 a.author[href$="/HunterBot"],
@@ -87,22 +83,42 @@ a.userTagged[href$="/HunterBot"] {
     -webkit-border-radius: 10px;
     margin: 0 0 50px 0;
     color: white;
-    font-family: georgia;
+    font-family: georgia, serif;
     text-shadow: 3px 3px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
     font-weight: normal !important;
     content: "  Chad from Accounting  "
   }
 }
 
-a.author[href$="/YonkouProductions"]:after,
-a.userTagged[href$="/YonkouProductions"]:after {
-  visibility: visible;
-  font-size: 14px !important;
-  background-color: transparent;
-  color: #3399FF;
-  font-family: PalatinoLinotype;
-  font-weight: bold !important;
-  content: " Literally Meruem  "
+a.author[href$="/YonkouProductions"],
+a.userTagged[href$="/YonkouProductions"] {
+  visibility: hidden;
+  font-size: 0;
+  &:before {
+    visibility: visible;
+    font-size: 12px !important;
+    background-color: @purple;
+    border: 1px solid @darkerPurple;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-family: georgia, serif;
+    font-weight: bold !important;
+    content: ' Rabbit Zodiac Yonkou ';
+  }
+
+  &:after {
+    visibility: visible;
+    font-size: 12px !important;
+    background-color: transparent;
+    color: @green;
+    font-family: PalatinoLinotype, serif;
+    font-weight: bold !important;
+    content: " Literally Meruem  "
+  }
 }
 
 a.author[href$="/thelongestlurker"]:after,
@@ -143,7 +159,7 @@ a.userTagged[href$="/Di_Bello"] {
     margin: 0 0 50px 0;
     color: white;
     text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
-    font-family: georgia;
+    font-family: georgia, serif;
     font-weight: bold !important;
     content: " Dragon Zodiac Di Bello "
   }
@@ -152,7 +168,7 @@ a.userTagged[href$="/Di_Bello"] {
     font-size: 12px !important;
     background-color: transparent;
     color: gray;
-    font-family: PalatinoLinotype;
+    font-family: PalatinoLinotype, serif;
     font-weight: bold !important;
     content: " Terrorist Hunter  "
   }
@@ -211,9 +227,9 @@ a.userTagged[href$="/FlyingGoatee"] {
   content: "";
   &:before {
     visibility: visible;
-    font-size: 13px !important;
-    background-color: #83B2FC;
-    border: 1px solid #204270;
+    font-size: 12px !important;
+    background-color: @orange;
+    border: 1px solid @darkerOrange;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -222,7 +238,7 @@ a.userTagged[href$="/FlyingGoatee"] {
     text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
     font-family: georgia, sans-serif;
     font-weight: bold !important;
-    content: " FlyingGoatee "
+    content: " Tiger Zodiac FlyingGoatee "
   }
 }
 
