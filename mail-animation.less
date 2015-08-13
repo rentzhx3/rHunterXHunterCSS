@@ -1,0 +1,159 @@
+@import (reference) "constants";
+
+@keyframes gonMailWalk {
+  from {
+    background: @mailsprite 0 0;
+  }
+  to {
+    background: @mailsprite -800px 0;
+  }
+}
+
+@keyframes gonMailSlide {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 200px;
+  }
+}
+
+@keyframes gonMailAnnounce {
+  from {
+    left: 225px;
+    background: @mailsprite -800px 0;
+  }
+  to {
+    left: 225px;
+    background: @mailsprite -1400px 0;
+  }
+}
+
+@keyframes killuaMailSlide {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 50px;
+  }
+}
+
+@keyframes killuaLookAway {
+  from {
+    background: @mailsprite -200px -288px;
+  }
+  to {
+    background: @mailsprite -200px -288px;
+  }
+}
+
+@keyframes killuaNodding {
+  from {
+    background: @mailsprite -400px -288px;
+  }
+  to {
+    background: @mailsprite -800px -288px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  from {
+    transform: rotate(360deg) scale(0);
+  }
+}
+
+@keyframes mailFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes mailIn {
+  to {
+    bottom: 25px;
+  }
+}
+
+@keyframes jump {
+  30%, 60% {
+    bottom: 140px;
+  }
+  to {
+    bottom: 90px;
+  }
+}
+
+@gonWalkIterations: 4;
+@gonWalkTime: 700ms;
+@gonAnnouncementDelay: @gonWalkTime*@gonWalkIterations;
+@announcementDuration: 3s;
+@gonSlideTime: @gonWalkTime*@gonWalkIterations;
+@fadeDelay: @gonAnnouncementDelay + @announcementDuration + 2s;
+@mailEnterDelay: @gonAnnouncementDelay+2s;
+
+#mail.havemail {
+  &:before {
+    animation: gonMailWalk steps(4) @gonWalkTime @gonWalkIterations,
+    gonMailAnnounce steps(3) @announcementDuration @gonAnnouncementDelay,
+    gonMailSlide linear @gonSlideTime,
+    jump linear 400ms @mailEnterDelay + 100ms forwards,
+    rotate linear reverse 500ms @fadeDelay forwards;
+
+    //mailFadeOut 1s @fadeDelay forwards;
+    background: @mailsprite -1200px 0;
+    //noinspection CssInvalidPropertyValue
+    left: 225px;
+    //noinspection CssInvalidPropertyValue
+    bottom: 25px;
+    position: fixed;
+    padding: 0;
+    width: 200px;
+    height: 286px;
+    content: " ";
+  }
+
+  &:after {
+    animation: killuaMailSlide cubic-bezier(0.075, 0.925, 0.705, 1.315) 500ms @gonAnnouncementDelay+500ms forwards,
+    killuaLookAway 1s @gonAnnouncementDelay+1s forwards,
+    killuaNodding steps(2) 600ms @gonAnnouncementDelay+2s 6,
+    jump linear 400ms @mailEnterDelay + 100ms forwards,
+    rotate linear reverse 500ms @fadeDelay forwards;
+    background: @mailsprite 0 -288px;
+    position: fixed;
+    padding: 0;
+    width: 200px;
+    height: 288px;
+    //noinspection CssInvalidPropertyValue
+    left: -200px;
+    //noinspection CssInvalidPropertyValue
+    bottom: 25px;
+    content: " ";
+  }
+
+  & ~ .message-count {
+    &:before {
+      //visibility: visible;
+      display: inline-block !important;
+      padding: 10px;
+      content: 'You have mail!';
+      position: fixed;
+      bottom: -80px;
+      background: @orange;
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-size: 35px;
+      left: 85px;
+      line-height: 35px;
+      border-radius: @defaultBorderRadius;
+      border: solid 2px @darkerOrange;
+      animation: mailIn linear 200ms @mailEnterDelay forwards,
+      rotate linear reverse 500ms @fadeDelay forwards;
+    }
+  }
+}
