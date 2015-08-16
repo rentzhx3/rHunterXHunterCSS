@@ -32,8 +32,11 @@
 @themeColor: @green;
 @themeColorDarker: @darkerGreen;
 
-@announcementColor: @red;
-@announcementColorHover: @darkerRed;
+@themeHighlightColor: @red;
+@themeHighlightColorDarker: @darkerRed;
+
+@announcementColor: @themeHighlightColor;
+@announcementColorHover: @themeHighlightColorDarker;
 
 @wikiTitleColor: @themeColor;
 @wikititleShadowColor: black;
@@ -64,8 +67,9 @@
 @sideFaqColor: @themeColor;
 @sideFaqColorHover: @themeColorDarker;
 @sideLinkColor: @darkerOrange;
-@readTheRulesButtonColor: @red;
-@readTheRulesButtonColorHover: @darkerRed;
+@readTheRulesButtonColor: @themeHighlightColor;
+@readTheRulesButtonColorHover: @themeHighlightColorDarker;
+@spoilerTagColor: @themeHighlightColor;
 
 @stickyTextColor: @themeColor;
 
@@ -94,8 +98,6 @@
 @twoStarColorBG: #212121;
 @oneStarColor: #212121;
 @oneStarBG: #E0E0E0;
-@spoilerTagColor: #800;
-@spoilerTagColor: @red;
 
 @sidebarWidth: 335px;
 @defaultFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
