@@ -65,16 +65,6 @@
   }
 }
 
-@keyframes mailFadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    height: 0;
-  }
-}
-
 @keyframes mailIn {
   to {
     bottom: 25px;
@@ -105,12 +95,8 @@
     gonMailSlide linear @gonSlideTime,
     jump linear 400ms @mailEnterDelay + 100ms forwards,
     rotate linear reverse 500ms @fadeDelay forwards;
-
-    //mailFadeOut 1s @fadeDelay forwards;
     background: @mailsprite -1200px 0;
-    //noinspection CssInvalidPropertyValue
     left: 225px;
-    //noinspection CssInvalidPropertyValue
     bottom: 25px;
     position: fixed;
     padding: 0;
@@ -130,9 +116,7 @@
     padding: 0;
     width: 200px;
     height: 288px;
-    //noinspection CssInvalidPropertyValue
     left: -200px;
-    //noinspection CssInvalidPropertyValue
     bottom: 25px;
     content: " ";
   }

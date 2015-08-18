@@ -3,8 +3,6 @@
 #header-img-a {
   position: relative;
   top: 40px !important;
-  //margin-left: 2px !important;
-  //margin-right: 5px !important;
   margin-left: 3px !important;
   margin-right: -3px !important;
 
@@ -30,20 +28,15 @@
   #header-bottom-left {
     height: 170px;
     font-size: xx-small;
-
-    background: #000000 @banner !important;
+    background: #000000 @banner;
     .pagename {
       a {
         font-size: 0;
 
         &:after {
-          -webkit-transition: all 300ms;
-          -moz-transition: all 300ms;
-          -o-transition: all 300ms;
           transition: all 300ms;
           transition-timing-function: cubic-bezier(0.18, 0.89, 0.29, 1.05);
           content: '';
-          visibility: visible;
           background: @logo;
           padding-left: 336px;
           padding-top: 145px;
@@ -62,32 +55,24 @@
   }
   #header-bottom-right {
     //top username
-    background-color: @bannerBGColor !important;
+    background-color: @bannerBGColor;
     top: 190px;
-    color: #ffffff !important;
+    color: #ffffff;
     right: 8px;
     padding: 0;
     line-height: 25px;
-    height: 25px;
 
     * {
       color: white;
     }
     a {
-      color: #fafafa;;
+      color: #fafafa;
       &.login-required {
         text-decoration: underline;
-      }
-      &:visited {
-        color: #ffffff;
       }
       &:hover {
         color: #ffffff*.9;
       }
-    }
-
-    .beta-hint {
-      display: none !important;
     }
     .message-count {
       line-height: 15px;
@@ -112,7 +97,6 @@
   }
 
   ul.tabmenu {
-
     width: 100%;
     background-color: @bannerBGColor;
     height: 25px;
@@ -120,13 +104,12 @@
     top: 189px;
     border: 1px solid @bannerBGColorHover;
     padding: 0;
-    margin: 0 !important;
+    margin: 0;
     position: absolute;
     font-family: verdana, arial, helvetica, sans-serif;
-    font-weight: normal;
+    //font-weight: normal;
     li {
       display: inline-block;
-      height: 25px;
       text-transform: uppercase;
       line-height: 25px;
       margin: 0;
@@ -139,7 +122,6 @@
       a {
         color: white;
         background-color: transparent;
-
       }
       &.selected {
         background-color: @bannerBGColorHover;

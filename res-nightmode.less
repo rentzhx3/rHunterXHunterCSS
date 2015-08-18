@@ -1,5 +1,4 @@
 @import (reference) "constants";
-@import (reference) "animations";
 @import (reference) "hxhlanguageconstants";
 
 @nActiveElementColor: white;
@@ -447,43 +446,40 @@
     }
   }
   .wiki-page-content, .thing {
-
-    .md {
-      a {
-        color: #FF5722;
-        &:visited {
-          color: #FF5722*.8;
-        }
+    a {
+      color: #FF5722;
+      &:visited {
+        color: #FF5722*.8;
       }
-      h1, h2, h3, h4, h5, li {
-        color: #dddddd !important;
-      }
-      h5 {
-        text-shadow: #aaa 1px 2px 1px;
-      }
-      table {
-        thead {
-          tr {
-            th {
+    }
+    h1, h2, h3, h4, h5, li {
+      color: #dddddd !important;
+    }
+    h5 {
+      text-shadow: #aaa 1px 2px 1px;
+    }
+    table {
+      thead {
+        tr {
+          th {
+            color: white;
+            background-color: @buttonColor*.6;
+            &:hover {
               color: white;
-              background-color: @buttonColor*.6;
-              &:hover {
-                color: white;
-                background-color: @nbackgroundCardColor;
-              }
+              background-color: @nbackgroundCardColor;
             }
           }
-
         }
-        tbody {
-          tr {
-            &:hover {
-              background-color: black;
-              cursor: default;
-            }
-            td {
-              color: white;
-            }
+
+      }
+      tbody {
+        tr {
+          &:hover {
+            background-color: black;
+            cursor: default;
+          }
+          td {
+            color: white;
           }
         }
       }
@@ -647,8 +643,6 @@
 
   }
 
-  //@import (reference) "constants";
-
   .combined-search-page {
     .searchpane, .search-result-group-header {
       background: @buttonColor;
@@ -677,8 +671,6 @@
 
   }
 }
-
-//spoiler tags
 
 
 
