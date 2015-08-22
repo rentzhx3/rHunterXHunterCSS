@@ -228,6 +228,7 @@
     }
   }
   .arrow {
+    z-index: 100 !important;
     position: relative;
     //overflow: visible;
     &.upmod {
@@ -259,6 +260,7 @@
         left: -5px;
         animation: jajankenBall (2500ms *.8) forwards;
         animation-delay: (2500ms *0.2);
+        pointer-events: none;
       }
     }
     @killuaTime: 2600ms;
