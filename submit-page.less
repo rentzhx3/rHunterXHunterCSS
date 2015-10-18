@@ -59,8 +59,8 @@
       display: none;
     }
     &:before {
-      visibility: hidden;
-      animation: submitFlipBack @flipTime;
+      visibility: visible;
+      animation: submitFlipBack @flipTime forwards;
       position: absolute;
       left: 0;
       top: 0;
@@ -75,14 +75,14 @@
     }
 
     &:after {
-      visibility: hidden;
+      visibility: visible;
 
       z-index: 1000;
       //margin-top: -30px;
       width: 556px;
       border-radius: @defaultBorderRadius;
 
-      animation: submitFlipBack @flipTime;
+      animation: submitFlipBack @flipTime forwards;
       position: absolute;
       top: 0;
       left: 0;
