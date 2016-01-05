@@ -2,15 +2,14 @@
 
 @keyframes chains {
   from {
-    background-position-x: 0;
+    background: @snoosprite 0 0;
   }
   to {
-    background-position-x: -660px;
+    background: @snoosprite  -660px 0;
   }
-
 }
 
-// to load before hover
+// load before hover
 #header-img-a {
   &:before {
     content: ' ';
@@ -21,6 +20,7 @@
 
   #header-img {
     visibility: hidden;
+    height: 0; //firefox fix
   }
 
   &:before {
