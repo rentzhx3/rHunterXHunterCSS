@@ -1,21 +1,22 @@
 @import (reference) "constants";
 
-@keyframes chains {
+@keyframes explosion {
   from {
     background: @snoosprite 0 0;
   }
   to {
-    background: @snoosprite  -660px 0;
+    background: @snoosprite  -2112px 0;
   }
 }
 
-// load before hover
+// preload
 #header-img-a {
   &:before {
     content: ' ';
-    background: @snoosprite -660px 0;
+    background: @snoosprite -2112px 0;
   }
 }
+
 #header-img-a:hover {
 
   #header-img {
@@ -23,15 +24,23 @@
     height: 0; //firefox fix
   }
 
+  @expduration: 500ms;
+  @expdelay: 100ms;
+  @biskymodedelay: @expdelay + (@expduration *0.8);
+
+  //
   &:before {
     content: ' ';
-    background: @snoosprite -660px 0;
-    width: 56px;
-    height: 80px;
+    background: @snoosprite -2112px 0;
+    width: 120px;
+    height: 120px;
     //margin-left: -44px;
-    margin-top: 2px;
+    margin-top: -17px;
+    left: -16px;
     position: absolute;
     display: inline-block;
+    opacity: 1;
+    animation: fadeIn linear @biskymodedelay 100ms both;
 
   }
   &:after {
@@ -39,16 +48,18 @@
     display: inline-block;
     content: ' ';
     background: @snoosprite;
-    width: 60px;
-    height: 60px;
+    width: 132px;
+    height: 132px;
     margin-top: 27px;
 
-    opacity: 0;
-    left: 0;
-    animation: fadeIn linear 700ms 600ms forwards, chains 500ms 300ms steps(11) infinite;
+    opacity: 1;
+    left: -22px;
+    top: -45px;
+
+    animation: explosion @expduration @expdelay steps(16) forwards,
+    fadeIn 10ms (@expdelay + @expduration)  reverse forwards;
 
   }
 }
 
-
-
+//
