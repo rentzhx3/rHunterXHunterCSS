@@ -1,0 +1,89 @@
+@import (reference) "../../constants";
+
+.animStatus() {
+  visibility: visible !important;
+  width: 50px;
+  height: 150px;
+  top: -130px; //125 -5
+  left: -17px; //15 -2
+  z-index: 999999 !important;
+}
+
+@keyframes thunderbolt {
+  from {
+    .animStatus;
+    background: @sprite 0 -425px;
+  }
+  to {
+    .animStatus;
+    background: @sprite -800px -425px;
+
+  }
+}
+
+@keyframes thunderboltKillua {
+  @height: -172px;
+  0% {
+    width: 44px;
+    height: 58px;
+    top: -15px;
+    left: -15px;
+    background: @downvote;
+    visibility: visible;
+
+  }
+  20% {
+    //left: -15px;
+  }
+  20% {
+    //left: 6px;
+    left: -15px;
+    top: -15px;
+  }
+  25% {
+    background: @downvote;
+  }
+  25.001% {
+    background: @downvote2;
+  }
+
+  //25% {
+  //  height: @height *.80;
+  //}
+  //40% {
+  //  height: @height *.9;
+  //}
+
+  40% {
+    left: 6px;
+    top: @height;
+  }
+
+  60% {
+    background: @downvote2;
+  }
+  60.001% {
+    background: @downvote3;
+  }
+  85% {
+    opacity: 1;
+  }
+  99.999%, 100% {
+    opacity: 0;
+    width: 44px;
+    height: 58px;
+    background: @downvote3;
+    top: @height;
+    left: 6px;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    background: @defaultDownvote;
+    width: 15px;
+    height: 14px;
+    left: 0;
+    top: 0;
+  }
+
+}

@@ -1,0 +1,136 @@
+@import (reference) "../../constants";
+
+@keyframes jajankenBall {
+  0% {
+    visibility: visible;
+    top: -82px;
+    background: @jajanken1;
+    opacity: 0.6;
+    transform: rotate(0deg);
+    width: 40px;
+    height: 40px;
+
+  }
+  ///TEST
+  3.2% {
+    background: @sprite 0 -382px
+  }
+  3.201%, 6.4% {
+    background: @sprite -40px -382px
+  }
+  6.401%, 9.6% {
+    background: @sprite -80px -382px
+  }
+  12.8%, 9.601% {
+    background: @sprite -120px -382px
+  }
+  12.801%, 16% {
+    background: @sprite -160px -382px
+  }
+  16.001%, 19.2% {
+    opacity: 0.8;
+    background: @sprite -200px -382px
+  }
+  19.201%, 22.4% {
+    background: @sprite -240px -382px
+  }
+  22.401%, 25.6% {
+    background: @sprite -280px -382px
+  }
+  25.601%, 28.8% {
+    background: @sprite -320px -382px
+  }
+  28.801%, 32% {
+    background: @sprite -360px -382px
+  }
+  32.001%, 35.2% {
+    background: @sprite -400px -382px
+  }
+  35.201%, 38.4% {
+    background: @sprite -440px -382px
+  }
+  38.401%, 41.6% {
+    background: @sprite -480px -382px
+  }
+  41.601%, 44.8% {
+    background: @sprite -520px -382px
+
+  }
+  44.801% {
+    background: @sprite -560px -382px;
+    transform: rotate(360deg);
+
+  }
+
+  60% {
+    opacity: 1;
+    background: @sprite -560px -382px;
+  }
+  65% {
+    top: -82px;
+  }
+  85% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    top: -350px;
+    background: @sprite -560px -382px;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    top: -350px;
+    opacity: 0;
+    background: @sprite -560px -382px;
+    width: 40px;
+    height: 40px;
+
+  }
+}
+
+@keyframes jajankenGon {
+  0% {
+    top: -50+15px;
+    left: -2px;
+    width: 25px;
+    height: 50px;
+    background: @upvote;
+  }
+  20% {
+    background: @upvote;
+  }
+  20.001%, 73% {
+    background: @upvote2;
+  }
+  73.001% {
+    background: @upvote3;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    top: -50+15px;
+    left: -2px;
+    width: 25px;
+    height: 50px;
+    background: @upvote3;
+  }
+  90.001% {
+    top: -2px;
+    left: 0;
+    width: 15px;
+    height: 14px;
+    background: @defaultUpvote;
+  }
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    background: @defaultUpvote;
+
+  }
+}
