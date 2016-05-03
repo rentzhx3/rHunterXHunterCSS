@@ -30,7 +30,7 @@
         max-width: 100%;
       }
     }
-    .RES-keyNav-activeElement {
+    .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
       background-color: transparent !important;
     }
   }
@@ -67,6 +67,9 @@
       &.RES-keyNav-activeElement {
         border-color: @activeElementColor;
         background-color: transparent !important;
+        .usertext-body {
+          background-color: transparent !important;
+        }
       }
     }
     &:not(:first-child), &:not(:first-child) .entry {
