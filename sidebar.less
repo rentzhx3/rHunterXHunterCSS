@@ -121,8 +121,8 @@
       background: @sideImage;
       display: block;
       margin: 0 auto;
-      width: 150px;
-      height: 290px;
+      width: @sideImageWidth;
+      height: @sideImageHeight;
       font-size: 0;
       padding: 5px 0;
     }
@@ -233,7 +233,7 @@
 
     h5, h4 {
       a {
-        transition: background-color 200ms ease-out;
+        transition: 100ms ease-out;
 
         line-height: 22px;
         height: 22px;
@@ -245,9 +245,31 @@
         border-radius: @defaultBorderRadius;
         font-weight: bold;
         font-family: @defaultFontFamily;
-        color: white;
+        color: rgba(255, 255, 255, 1);
         text-shadow: #000000 1px 0 1px;
         right: 4px;
+        &:after {
+          color: rgba(0, 0, 0, 0);
+          transition: @animTime;
+          position: absolute;
+          margin-left: -115px;
+          content: attr(title);
+          padding: 0 8px;
+          text-shadow: none;
+        }
+        &:hover {
+          text-shadow: none;
+          color: rgba(0, 0, 0, 0.0);
+          background-color: transparent;
+          &:after {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 1);
+            text-shadow: #000000 1px 0 1px;
+            visibility: visible;
+
+          }
+
+        }
         &:hover {
           background-color: @latestFloatingColorHover;
         }
