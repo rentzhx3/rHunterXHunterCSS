@@ -55,14 +55,18 @@ body .thing.comment {
 }
 
 .commentarea {
+
   .RES-keyNav-activeElement {
-    background-color: transparent !important;
     border-right: @activeElementColor solid 4px;
+  }
+  .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
+    background-color: transparent !important;
     .usertext-body {
       .md {
         background-color: transparent !important;
       }
     }
+
   }
   .morecomments a {
     color: @usernameColorVisited;
