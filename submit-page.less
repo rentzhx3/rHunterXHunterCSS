@@ -90,7 +90,7 @@
       bottom: 0;
       content: '';
       background-color: #B4DEF9;
-      border: solid 4px #000000;
+      border: solid 3px #000000;
       //
     }
   }
@@ -120,7 +120,7 @@
         display: inline-block;
         width: 260px;
         background-color: @hunterLicenseColor/2;
-        border: solid 2px #aaa;
+        border: solid 1px #aaa;
         border-bottom: 0;
         border-radius: @defaultBorderRadius @defaultBorderRadius 0 0;
         padding: 10px;
@@ -241,7 +241,7 @@
       padding: 15px;
       margin-top: 15px;
       border: solid 1px #aaaaaa;
-      box-shadow: rgba(0, 0, 0, 0.2) 0 8px 17px 0, rgba(0, 0, 0, 0.188235) 0 6px 20px 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
     #reddit-field {
       display: none;
@@ -256,13 +256,14 @@
       }
     }
     .formtabs-content {
-      box-shadow: rgba(0, 0, 0, 0.2) 0 8px 17px 0, rgba(0, 0, 0, 0.188235) 0 6px 20px 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
       .spacer:first-child {
-        margin-top: 190px;
+        margin-top: 95px;
       }
       color: #000000;
-      padding: 20px;
-      border: solid 2px #aaaaaa;
+      padding: 45px 20px 20px;
+
+      border: solid 1px #aaaaaa;
       border-top: 0;
       border-radius: 0 0 @defaultBorderRadius @defaultBorderRadius;
 
@@ -287,7 +288,9 @@
           text-transform: uppercase;
         }
         &#title-field {
+          padding-top: 10px !important;
           textarea {
+            height: 4em !important;
             background: @hxhDescribePost #ffffff no-repeat;
           }
           textarea {
@@ -334,7 +337,7 @@
               visibility: visible;
               position: absolute;
               left: 0;
-              margin-left: -10px;
+              margin-left: -35px;
               margin-top: -10px;
               content: '';
               display: inline-block;
@@ -386,9 +389,10 @@
 
         }
         &#url-field {
+          padding-top: 27px;
           .title {
             &:before {
-              margin-left: -20px;
+              margin-left: -48px;
               width: 200px;
               background: @hxhURL;
             }
@@ -406,6 +410,7 @@
           }
         }
         &#text-field {
+          padding-top: 10px !important;
           textarea {
             background: @hxhDontShitPost #ffffff no-repeat !important;
             &:focus {
@@ -479,7 +484,7 @@
             display: none;
           }
           //
-          border: solid 2px #aaaaaa;
+          border: solid 1px #aaaaaa;
 
           &:after {
             opacity: 0.1;
@@ -522,12 +527,15 @@
       margin-left: 9px;
       width: 100%;
     }
-    button:not(.RESBigEditorPop) {
+    button:not(.RESBigEditorPop), .file-upload-button {
       background-color: @blue;
       border: solid 1px @darkerBlue;
       color: white;
       padding: 10px;
+      transition: background-color @transitionTime;
       border-radius: @defaultBorderRadius;
+      text-transform: uppercase;
+      font-weight: bold;
       &:hover {
         background-color: @darkerBlue;
       }
@@ -539,6 +547,12 @@
       //    background-color: #eeeeee;
       //  }
       //}
+    }
+    .file-upload-button {
+      padding: 4px;
+    }
+    .status {
+      display: none;
     }
 
   }
