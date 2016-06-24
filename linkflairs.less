@@ -14,20 +14,23 @@
   color: white;
   font-size: 10px;
   font-weight: bold;
-  width: 105px;
+  min-width: 85px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: none;
   text-align: center;
   border-radius: @defaultBorderRadius;
   border: solid 1px @lgreendarker;
 }
 
-.linkflair-a .linkflairlabel {
+.linkflair-a .linkflairlabel, .flairsample-left .linkflair-a .linkflairlabel {
   background-color: #FF9800;
   color: #ffffff;
   border-color: #000000;
 
 }
 
-.linkflair-b .linkflairlabel {
+.linkflair-b .linkflairlabel, .flairsample-left .linkflair-b .linkflairlabel {
   background-color: @lred;
   border-color: @ldarkerRed;
 
@@ -45,7 +48,6 @@
 }
 
 .linkflair-e .linkflairlabel {
-  width: 105px;
   text-align: center;
   background-color: @lblue;
   border-color: @ldarkerBlue;
@@ -65,7 +67,6 @@
 }
 
 .linkflair-h .linkflairlabel {
-  display: inline;
   background-color: @ldarkerRed;
   border-color: black;
   color: white;
