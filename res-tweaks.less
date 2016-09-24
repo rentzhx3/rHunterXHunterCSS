@@ -1,0 +1,37 @@
+@import (reference) "constants";
+
+.voteWeight {
+  background-color: transparent !important;
+}
+
+.RESDropdownList {
+  background-color: @themeColor;
+  border-color: @themeColorDarker;
+
+  li:hover, a:hover {
+    background-color: @themeColorDarker !important;
+    color: white !important;
+
+  }
+}
+
+#RESMainGearOverlay {
+  background-color: @bannerBGColor !important;
+}
+
+#RESDropdownOptions {
+  color: white !important;
+  background-color: @bannerBGColor !important;
+  li {
+    color: white !important;
+    a {
+      color: #ffffff;
+    }
+    &:hover {
+      background-color: @bannerBGColorHover !important;
+      a {
+        background-color: @bannerBGColorHover;
+      }
+    }
+  }
+}

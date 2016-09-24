@@ -1,13 +1,6 @@
 @import (reference) "constants";
 
-.side, .content {
-  margin-top: -15px;
-}
 
-.side ~ .content {
-  //sidebar width+ sidebar padding +10px margin
-  margin-right: @sidebarWidth + 30px+10px !important;
-}
 
 .thing.stickied, .thing.stickied a.title {
   color: @stickyTextColor !important;
@@ -137,16 +130,16 @@
   margin-left: -80px;
 }
 
-.listing-page, div[role=main] {
-  .thing.link:first-child {
-    .thumbnail {
-      min-height: 70px !important;
-    }
-    .midcol {
-      margin-top: 15px !important;
-    }
-  }
-}
+//.listing-page, div[role=main] {
+//  .thing.link:first-child {
+//    .thumbnail {
+//      min-height: 70px !important;
+//    }
+//    .midcol {
+//      margin-top: 15px !important;
+//    }
+//  }
+//}
 
 .thumbnail {
   position: relative !important;
@@ -170,7 +163,6 @@
     &:after {
       content: "";
       opacity: 0.6;
-      //        background-size: contain;
       display: block;
       width: 70px;
       height: 70px;
@@ -221,9 +213,7 @@
     overflow: visible;
     margin-left: 18px;
   }
-  .midcol {
-    overflow: visible;
-  }
+
   &.link {
     .midcol {
       margin: 25px 85px auto 15px;

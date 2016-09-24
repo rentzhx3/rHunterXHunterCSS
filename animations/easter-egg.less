@@ -1,0 +1,83 @@
+@import (reference) "../constants";
+
+@keyframes slideOut {
+  0% {
+    left: -800px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 120%;
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(-400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-400px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+//noinspection ALL
+#baconBit {
+  position: fixed;
+  width: 336px;
+  height: 145px;
+  left: -800px;
+  top: calc(~"50% - 72px") !important;
+  background: @logoHover;
+  z-index: 2147483646 !important;
+
+  &:before, &:after {
+    content: '';
+    visibility: hidden;
+    display: block !important;
+    position: fixed !important;
+    top: -200px;
+    opacity: 1;
+    height: 145px;
+    width: 336px;
+  }
+  &:before {
+    left: -50px !important;
+    width: 430px;
+    height: 170px;
+    background: @togashi1;
+  }
+  &:after {
+    background: @togashi2;
+    width: 430px;
+    left: -50px;
+  }
+
+  &.makeitrain {
+    animation: slideOut 10000ms linear forwards;
+    transform: rotate(0deg);
+    visibility: visible !important;
+    &:before, &:after {
+      animation: orbit 3000ms linear infinite;
+      visibility: visible;
+      top: calc(~"50% - 72px") !important;
+    }
+    &:after {
+      animation: orbit2 3000ms linear infinite;
+    }
+  }
+}

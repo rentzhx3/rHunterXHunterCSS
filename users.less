@@ -13,10 +13,10 @@ a.author {
       &:after {
         margin-left: 4px;
         visibility: visible;
-        font-size: 10px !important;
-        color: @color !important;
-        font-weight: bold !important;
-        background-color: @background !important;
+        font-size: 10px;
+        color: @color;
+        font-weight: bold;
+        background-color: @background;
         content: @text;
         border-radius: 2px;
         padding-right: 4px;
@@ -26,8 +26,8 @@ a.author {
   }
 }
 
-.starTemplate(@value,@color,@background,@user) {
-  .customTextTemplate("@{value} Star Hunter ", @color, @background, @user);
+.starTemplate(@rank,@color,@background,@user) {
+  .customTextTemplate("@{rank} Star Hunter ", @color, @background, @user);
 }
 
 .oneStar(@user) {

@@ -1,0 +1,35 @@
+@import (reference) "constants";
+
+//spoiler tag
+a[href='/a'], a[href='/m'], a[href='/t'], a[href='/s'], a[href='/g'] {
+  background-color: @spoilerTagColor;
+  padding: 0 2px;
+  color: white !important;
+  border-radius: @defaultBorderRadius;
+  cursor: help;
+  transition: 200ms;
+  text-decoration: none !important;
+
+  &:after {
+    content: attr(title);
+    padding: 0 8px;
+    visibility: hidden;
+  }
+  &:hover {
+    color: slategray !important;
+    background-color: transparent;
+    &:after {
+      color: black;
+      background-color: transparent;
+      visibility: visible;
+
+    }
+
+  }
+
+  .entry {
+    margin-left: 124px;
+    overflow: visible;
+  }
+
+}

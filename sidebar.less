@@ -1,8 +1,6 @@
 @import (reference) "constants";
 @import (reference) "hxhlanguageconstants";
 
-@sidebarPadding: 15px;
-
 .side {
   hr {
     border: 0;
@@ -13,14 +11,15 @@
   background: @cardBackgroundColor;
   padding: 7px @sidebarPadding @sidebarPadding;
   width: @sidebarWidth;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 
   a {
     color: @sideLinkColor;
   }
-  //a[href='#/RES_SR_Config/NightModeCompatible']{
-  //  display: none;
-  //}
+
+  #ad_main_top {
+    margin: auto;
+  }
   .submit {
     display: none;
   }
@@ -41,12 +40,12 @@
     content: @onlineUsers;
   }
   .flairtoggle {
-    display: inline-block !important;
+    display: inline-block;
     margin-top: 7px !important;
     width: 100%;
     padding-top: 7px !important;
     border-top: solid 1px #eeeeee;
-    padding-bottom: 7px;
+    padding-bottom: 7px !important;
   }
   .tagline + .usertext {
     margin-top: 15px;
@@ -193,8 +192,6 @@
       }
 
       a {
-        //display: none;
-        //font-size: 0;
         line-height: normal;
         border: 0;
         background: transparent none;
@@ -203,90 +200,6 @@
 
   }
 
-  .md {
-    //custom headers
-    h6 {
-      //announcement
-      a {
-        position: absolute;
-        background-color: @announcementColor;
-        top: 221px;
-        left: 10px;
-        right: @sidebarWidth + 30px+5px+5px !important;;
-        transition: background-color 200ms ease-out;
-        height: 47px;
-        text-align: center;
-        border-radius: @defaultBorderRadius;
-        font-weight: bold;
-        font-family: @defaultFontFamily;
-        font-size: 13px;
-        color: #ffffff;
-        vertical-align: middle;
-        line-height: 45px;
-        &:hover {
-          background-color: @announcementColorHover;
-          color: white
-        }
-      }
-    }
-    //latest ep/chapter
-
-    h5, h4 {
-      a {
-        transition: 100ms ease-out;
-
-        line-height: 22px;
-        height: 22px;
-        position: absolute;
-        background-color: @latestFloatingColor;
-        width: @sidebarWidth+31px;
-        text-align: center;
-        font-size: 12px;
-        border-radius: @defaultBorderRadius;
-        font-weight: bold;
-        font-family: @defaultFontFamily;
-        color: rgba(255, 255, 255, 1);
-        text-shadow: #000000 1px 0 1px;
-        right: 4px;
-        &:after {
-          color: rgba(0, 0, 0, 0);
-          transition: @animTime;
-          position: absolute;
-          margin-left: -115px;
-          content: attr(title);
-          padding: 0 8px;
-          text-shadow: none;
-        }
-        &:hover {
-          text-shadow: none;
-          color: rgba(0, 0, 0, 0.0);
-          background-color: transparent;
-          &:after {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 1);
-            text-shadow: #000000 1px 0 1px;
-            visibility: visible;
-
-          }
-
-        }
-        &:hover {
-          background-color: @latestFloatingColorHover;
-        }
-      }
-    }
-    h5 {
-      a {
-        top: 221px;
-      }
-    }
-    h4 {
-      a {
-        top: 246px;
-      }
-    }
-
-  }
   h2 {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -329,10 +242,6 @@
       padding: 8px !important;
     }
     & ~ p {
-      &:first-of-type {
-        //border-top: solid 1px @darkerBlue;
-      }
-
       &:last-of-type {
         border-bottom: solid 1px @innerSidebarBorderColor;
         border-bottom-left-radius: 4px;
@@ -613,18 +522,6 @@
   }
 
 }
-
-//
-//@keyframes backCardAnim {
-//  0% {
-//    z-index: 999999;
-//  }
-//  35% {
-//    z-index: 0 !important;
-//  }
-//}
-
-//@shrink: url(https://localhost/hunter/sprite.png) -300px -70px - 51px;
 
 @keyframes holderAnim {
   0% {

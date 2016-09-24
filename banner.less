@@ -2,101 +2,17 @@
 
 #header-img-a {
   position: relative;
-  top: 40px !important;
-  margin-left: 3px !important;
-  margin-right: -3px !important;
+  top: 40px;
+  margin-left: 3px;
+  margin-right: -3px;
 
-}
-
-.infobar {
-  margin-right: 0;
 }
 
 #header {
-  margin-bottom: 100px;
+  margin-bottom: 85px;
   border: 0;
-  .drop-choices {
-    background-color: @themeColor;
-    a {
-      color: white;
-      &:hover {
-        background-color: @themeColorDarker;
-      }
-    }
-  }
 
-  #header-bottom-left {
-    height: 170px;
-    font-size: xx-small;
-    background: #000000 @banner;
-    .pagename {
-      a {
-        font-size: 0;
-
-        &:after {
-          transition: all 300ms;
-          transition-timing-function: cubic-bezier(0.18, 0.89, 0.29, 1.05);
-          content: '';
-          background: @armsLogo no-repeat;
-          padding-left: 336px;
-          padding-top: 145px;
-          top: 30px;
-          position: absolute;
-
-        }
-        &:hover {
-          &:after {
-            background: @armsLogoHover no-repeat;
-          }
-        }
-      }
-    }
-
-  }
-  #header-bottom-right {
-    //top username
-    background-color: @bannerBGColor;
-    top: 190px;
-    color: #ffffff;
-    right: 8px;
-    padding: 0;
-    line-height: 25px;
-
-    * {
-      color: white;
-    }
-    a {
-      color: #fafafa;
-      &.login-required {
-        text-decoration: underline;
-      }
-      &:hover {
-        color: #ffffff*.9;
-      }
-    }
-    .message-count {
-      line-height: 15px;
-    }
-
-    .user {
-      margin-left: 14px;
-    }
-    #userbarToggle {
-      height: auto;
-      top: 1px;
-      bottom: 0;
-      background-color: transparent;
-      border: none;
-      color: #ffffff;
-      line-height: 22px;
-      &:hover {
-        color: #ffffff*.9;
-      }
-    }
-
-  }
-
-  ul.tabmenu {
+  .tabmenu {
     width: 100%;
     background-color: @bannerBGColor;
     height: 25px;
@@ -106,8 +22,6 @@
     padding: 0;
     margin: 0;
     position: absolute;
-    font-family: verdana, arial, helvetica, sans-serif;
-    //font-weight: normal;
     li {
       display: inline-block;
       text-transform: uppercase;
@@ -127,18 +41,91 @@
         background-color: @bannerBGColorHover;
         a {
           border: none;
+          background-color: transparent;
         }
       }
       &:hover {
-        background-color: @bannerBGColorHover !important;
+        background-color: @bannerBGColorHover;
       }
     }
   }
 
 }
 
+#header-bottom-left {
+  height: 170px;
+  font-size: xx-small;
+  background: #000000 @banner;
+  // HUNTER X HUNTER LOGO
+  .pagename {
+    a {
+      font-size: 0;
+      &:after {
+        transition: all 300ms;
+        transition-timing-function: cubic-bezier(0.18, 0.89, 0.29, 1.05);
+        content: '';
+        background: @armsLogo no-repeat;
+        padding-left: 336px;
+        padding-top: 145px;
+        top: 30px;
+        position: absolute;
+      }
+      &:hover {
+        &:after {
+          background: @armsLogoHover no-repeat;
+        }
+      }
+    }
+  }
+
+}
+
+//top username
+#header-bottom-right {
+  background-color: @bannerBGColor;
+  top: 190px !important;
+  color: #ffffff;
+  right: 8px;
+  padding: 0;
+  line-height: 25px;
+
+  * {
+    color: white;
+  }
+
+  a {
+    color: #fafafa;
+    &.login-required {
+      text-decoration: underline;
+    }
+    &:hover {
+      color: #ffffff*.8;
+    }
+  }
+  .message-count {
+    line-height: 15px;
+  }
+
+  .user {
+    margin-left: 14px;
+  }
+  #userbarToggle {
+    height: auto;
+    top: 1px;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    line-height: 22px;
+    &:hover {
+      color: #ffffff*.9;
+    }
+  }
+
+}
+
 .wiki-page, .listing-page {
-  ul.tabmenu {
+  .tabmenu {
     li {
       text-align: center;
       padding-right: 9px;
@@ -207,23 +194,3 @@
 
 }
 
-#RESDropdownOptions {
-  color: white !important;
-  background-color: @bannerBGColor !important;
-  li {
-    color: white !important;
-    a {
-      color: #ffffff;
-    }
-    &:hover {
-      background-color: @bannerBGColorHover !important;
-      a {
-        background-color: @bannerBGColorHover;
-      }
-    }
-  }
-}
-
-#RESMainGearOverlay {
-  background-color: @bannerBGColor !important;
-}

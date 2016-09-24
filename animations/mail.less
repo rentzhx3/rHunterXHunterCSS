@@ -1,6 +1,6 @@
-@import (reference) "constants";
+@import (reference) "../constants";
 
-@keyframes gonMailWalk {
+@keyframes gonWalk {
   from {
     background: @mailsprite 0 0;
   }
@@ -9,7 +9,7 @@
   }
 }
 
-@keyframes gonMailSlide {
+@keyframes gonSlide {
   from {
     left: -200px;
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@keyframes gonMailAnnounce {
+@keyframes gonHandsUp {
   from {
     left: 225px;
     background: @mailsprite -800px 0;
@@ -29,7 +29,7 @@
   }
 }
 
-@keyframes killuaMailSlide {
+@keyframes killuaSlide {
   from {
     left: -200px;
   }
@@ -38,7 +38,7 @@
   }
 }
 
-@keyframes killuaLookAway {
+@keyframes killuaBlink {
   from {
     background: @mailsprite -200px -288px;
   }
@@ -47,7 +47,7 @@
   }
 }
 
-@keyframes killuaNodding {
+@keyframes killuaNod {
   from {
     background: @mailsprite -400px -288px;
   }
@@ -81,18 +81,18 @@
 }
 
 @gonWalkIterations: 4;
-@gonWalkTime: 700ms;
-@gonAnnouncementDelay: @gonWalkTime*@gonWalkIterations;
+@gonWalkCicleTime: 700ms;
+@gonAnnouncementDelay: @gonWalkCicleTime*@gonWalkIterations;
 @announcementDuration: 3s;
-@gonSlideTime: @gonWalkTime*@gonWalkIterations;
+@gonSlideTime: @gonWalkCicleTime*@gonWalkIterations;
 @fadeDelay: @gonAnnouncementDelay + @announcementDuration + 2s;
 @mailEnterDelay: @gonAnnouncementDelay+2s;
 
 #mail.havemail {
   &:before {
-    animation: gonMailWalk steps(4) @gonWalkTime @gonWalkIterations,
-    gonMailAnnounce steps(3) @announcementDuration @gonAnnouncementDelay,
-    gonMailSlide linear @gonSlideTime,
+    animation: gonWalk steps(4) @gonWalkCicleTime @gonWalkIterations,
+    gonHandsUp steps(3) @announcementDuration @gonAnnouncementDelay,
+    gonSlide linear @gonSlideTime,
     jump linear 400ms @mailEnterDelay + 100ms forwards,
     rotate linear reverse 500ms @fadeDelay forwards;
     background: @mailsprite -1200px 0;
@@ -106,9 +106,9 @@
   }
 
   &:after {
-    animation: killuaMailSlide cubic-bezier(0.075, 0.925, 0.705, 1.315) 500ms @gonAnnouncementDelay+500ms forwards,
-    killuaLookAway 1s @gonAnnouncementDelay+1s forwards,
-    killuaNodding steps(2) 600ms @gonAnnouncementDelay+2s 6,
+    animation: killuaSlide cubic-bezier(0.075, 0.925, 0.705, 1.315) 500ms @gonAnnouncementDelay+500ms forwards,
+    killuaBlink 1s @gonAnnouncementDelay+1s forwards,
+    killuaNod steps(2) 600ms @gonAnnouncementDelay+2s 6,
     jump linear 400ms @mailEnterDelay + 100ms forwards,
     rotate linear reverse 500ms @fadeDelay forwards;
     background: @mailsprite 0 -288px;
