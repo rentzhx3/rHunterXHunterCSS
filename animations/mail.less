@@ -56,7 +56,7 @@
   }
 }
 
-@keyframes rotate {
+@keyframes rotateAndShrink {
   from {
     transform: rotate(0deg) scale(1);
   }
@@ -94,7 +94,7 @@
     gonHandsUp steps(3) @announcementDuration @gonAnnouncementDelay,
     gonSlide linear @gonSlideTime,
     jump linear 400ms @mailEnterDelay + 100ms forwards,
-    rotate linear reverse 500ms @fadeDelay forwards;
+    rotateAndShrink linear reverse 500ms @fadeDelay forwards;
     background: @mailsprite -1200px 0;
     left: 225px;
     bottom: 25px;
@@ -110,7 +110,7 @@
     killuaBlink 1s @gonAnnouncementDelay+1s forwards,
     killuaNod steps(2) 600ms @gonAnnouncementDelay+2s 6,
     jump linear 400ms @mailEnterDelay + 100ms forwards,
-    rotate linear reverse 500ms @fadeDelay forwards;
+    rotateAndShrink linear reverse 500ms @fadeDelay forwards;
     background: @mailsprite 0 -288px;
     position: fixed;
     padding: 0;
@@ -136,7 +136,7 @@
       border-radius: @defaultBorderRadius;
       border: solid 2px @darkerOrange;
       animation: mailIn linear 200ms @mailEnterDelay forwards,
-      rotate linear reverse 500ms @fadeDelay forwards;
+      rotateAndShrink linear reverse 500ms @fadeDelay forwards;
     }
   }
 }

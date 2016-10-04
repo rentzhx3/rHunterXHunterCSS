@@ -1,0 +1,110 @@
+@import (reference) "../../constants";
+
+@cursor: @snoosprite 16px 0;
+
+@keyframes to_the_right {
+  100% {
+    margin-left: 1200px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes vertical_movement {
+  0%, 60% {
+    margin-top: 50px;
+  }
+  40% {
+    margin-top: 20px;
+  }
+  70%, 85% {
+    margin-top: 40px;
+  }
+  80% {
+    margin-top: 50px;
+  }
+  90%, 100% {
+    margin-top: 50px;
+  }
+
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 113px;
+
+  }
+}
+
+// preload
+#header-img-a {
+  cursor: pointer;
+  z-index: 10;
+  &:before {
+    content: ' ';
+    background: @snoosprite;
+  }
+}
+
+#header-img-a:hover {
+  cursor: none;
+  & ~ span:before {
+    position: absolute;
+    content: ' ';
+    background: @snoosprite -113px 0;
+    width: 124px;
+    height: 25px;
+    top: 120px;
+    z-index: 20;
+    display: block;
+    pointer-events: none;
+    cursor: pointer;
+    opacity: 0.4;
+    transform: rotate(-30deg);
+    animation: reveal 100ms linear, fadeOut 100ms 100ms forwards;
+  }
+
+  #header-img {
+    visibility: hidden;
+    height: 0; //firefox fix
+  }
+
+  &:before {
+    content: ' ';
+    background: @snoosprite;
+    width: 113px;
+    height: 85px;
+    top: 0;
+    margin-top: 0;
+    position: absolute;
+    display: inline-block;
+  }
+  @animTime: 1500ms;
+  &:after {
+    visibility: visible;
+    position: absolute;
+    display: inline-block;
+    content: ' ';
+    background: @cursor;
+    width: 16px;
+    top: 0;
+    margin-top: 50px;
+    margin-left: -50px;
+    height: 26px;
+    opacity: 1;
+    animation: to_the_right @animTime ease-out forwards, rotate @animTime forwards, vertical_movement @animTime linear forwards;
+
+  }
+}
+
+//
