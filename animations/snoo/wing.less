@@ -1,0 +1,121 @@
+@import (reference) "../../constants";
+
+@nenSprite: @snoosprite -110px 0;
+@shockWave: @snoosprite -190px 0;
+@shatterLogo: @snoosprite 0 289px;
+@originalLogo: @snoosprite 0 145px;
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shatter {
+  from {
+    background: @originalLogo;
+  }
+  to {
+    background: @shatterLogo;
+  }
+
+}
+
+@keyframes nen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes activate {
+  from {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  to {
+    left: 400px;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+// preload
+#header-img-a {
+  cursor: pointer;
+  &:before {
+    content: ' ';
+    background: @snoosprite;
+  }
+}
+
+#header-img-a:hover, #header-img-a.hover {
+  #header-img {
+    visibility: hidden !important;
+  }
+
+  &:before {
+    content: ' ';
+    background: @snoosprite -56px 0;
+    width: 56px;
+    height: 80px;
+    top: -71px;
+    margin-top: 0;
+    position: absolute;
+    display: inline-block;
+  }
+  &:after {
+    position: absolute;
+    background: @nenSprite;
+    pointer-events: none;
+    opacity: 0;
+    animation: nen 400ms 200ms linear forwards;
+    content: ' ';
+    left: -12px;
+    top: -88px;
+    width: 80px;
+    height: 114px;
+    z-index: 1;
+    display: inline-block;
+  }
+
+  & ~ .pagename a {
+    &:after {
+      transition: all 0ms;
+      transition-timing-function: steps(1);
+      animation: shatter 0ms 900ms forwards, shake 200ms 900ms cubic-bezier(.36, .07, .19, .97) both;
+      background: @originalLogo;
+
+    }
+  }
+  & ~ .tabmenu::before {
+    content: ' ';
+    opacity: 0;
+    visibility: visible;
+    width: 47px;
+    height: 102px;
+    background: @shockWave;
+    animation: activate 300ms 850ms forwards;
+    position: absolute;
+    top: -132px;
+    left: 40px;
+  }
+}
+
+//
