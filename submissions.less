@@ -81,38 +81,6 @@
   }
 }
 
-.marknsfw-button .togglebutton:after {
-  content: "spoiler";
-  font-size: 10px
-}
-
-.unmarknsfw-button .togglebutton:after {
-  content: "un-spoiler";
-  font-size: 10px
-}
-
-.stamp {
-  border: 0 !important;
-}
-
-.nsfw-stamp acronym {
-  visibility: hidden;
-  font-size: 0 !important
-}
-
-.nsfw-stamp acronym:after {
-  content: "SPOILERS";
-  visibility: visible;
-  color: @spoilerTagColor;
-  font-size: x-small;
-  text-decoration: none;
-  padding: 0 2px;
-  border: 1px solid @spoilerTagColor !important;
-  border-radius: @defaultBorderRadius;
-  margin-left: -3px;
-  box-shadow: none !important
-}
-
 .link {
   position: relative;
   .entry {
@@ -156,7 +124,7 @@
     }
   }
 
-  &.self, &.nsfw, &.default {
+  &.self, &.nsfw, &.spoiler, &.default {
     visibility: hidden;
     &:after {
       content: "";
@@ -167,15 +135,18 @@
       visibility: visible;
     }
   }
-  &.default:after,
-  &.self:after {
+  &.default:after, &.self:after {
     background: @selfPostThumb no-repeat;
   }
   &.nsfw {
     padding-bottom: 0;
     &:after {
+      background: @selfPostThumb no-repeat;
+    }
+  }
+  &.spoiler {
+    &:after {
       background: @spoilerPostThumb no-repeat;
-
     }
   }
 
@@ -185,10 +156,6 @@
   .thumbnail {
     position: relative;
   }
-}
-
-.marknsfw-button, .unmarknsfw-button {
-  font-size: 0;
 }
 
 .thing {
