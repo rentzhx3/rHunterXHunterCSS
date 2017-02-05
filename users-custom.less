@@ -143,37 +143,6 @@ a.userTagged[href$="/pitouxpitou"]:after {
   content: " <3 meow ~  "
 }
 
-a.author[href$="/Di_Bello"],
-a.userTagged[href$="/Di_Bello"] {
-  visibility: hidden;
-  font-size: 0;
-  content: "";
-  &:before {
-    visibility: visible;
-    font-size: 12px !important;
-    background-color: #cc0000;
-    border: 1px solid @darkerRed;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    margin: 0 0 50px 0;
-    color: white;
-    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
-    font-family: georgia, serif;
-    font-weight: bold !important;
-    content: " Dragon Zodiac Di Bello "
-  }
-  &::after {
-    visibility: visible;
-    font-size: 12px !important;
-    background-color: transparent;
-    color: gray;
-    font-family: PalatinoLinotype, serif;
-    font-weight: bold !important;
-    content: " Terrorist Hunter  "
-  }
-}
-
 a.author[href$="/screwbacca"],
 a.userTagged[href$="/screwbacca"] {
   visibility: hidden;
@@ -267,4 +236,55 @@ a.userTagged[href$="/JetsLag"]:after {
   text-shadow: 0.5px 0.5px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
   font-style: italic;
   content: " Rewatch Hunter"
+}
+
+a.author[href$="/guillomn"],
+a.userTagged[href$="/guillomn"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 12px !important;
+    background-color: #238639;
+    border: 2px solid #238639;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-weight: bold !important;
+    content: "  Monkey Zodiac guillomn "
+  }
+}
+
+.side {
+  a.author[href$="/guillomn"] {
+    &:before {
+      font-size: 11px !important;
+    }
+  }
+}
+
+a.author[href$="/Gearfire"],
+a.userTagged[href$="/Gearfire"] {
+  visibility: hidden;
+  font-size: 0;
+  content: "";
+  &:before {
+    visibility: visible;
+    font-size: 12px !important;
+    background-color: #910202;
+    border: 1px solid #910202*.9;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 50px 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0 #000000,-1px -1px 0 #000000,1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+    font-family: georgia, serif;
+    font-weight: bold !important;
+    content: " Dragon Zodiac Gearfire "
+  }
 }

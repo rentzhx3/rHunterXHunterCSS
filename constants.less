@@ -30,16 +30,18 @@
 @commentAlternateBGColor: @commentBGColor *.99;
 
 @themeColor: #441166;
+@themeColor: #132b2b;
 @themeColorDarker: @themeColor*.8;
 
 @themeHighlightColor: @themeColor *1.4;
+@themeHighlightColor: #335544;
 //@themeHighlightColor: #760032;
 @themeHighlightColorDarker: @themeHighlightColor * 0.8;
 
 @announcementColor: @themeHighlightColor;
 @announcementColorHover: @themeHighlightColorDarker;
 
-@wikiTitleColor: @themeColor;
+@wikiTitleColor: @themeHighlightColor;
 @wikititleShadowColor: black;
 
 @innerLinkColor: #FF5722*.9;
@@ -119,8 +121,9 @@
 @togashi2: url(https://localhost/hunter/togashi.png) -472px 0;
 @flairSprite1: url(https://localhost/hunter/spritesheet1.png);
 @flairSprite2: url(https://localhost/hunter/spritesheet2.png);
+@flairSprite3: url(https://localhost/hunter/spritesheet3.png);
 
-@banner: url(https://localhost/hunter/2011/heavens%20arena/2011ha.png);
+@banner: url(https://localhost/hunter/2011/yorknew/2011yn.png);
 @sideImage: url(https://localhost/hunter/2011/hunter%20exam/atx.png);
 @sideImageWidth: 200px;
 @sideImageHeight: 250px;
@@ -152,7 +155,9 @@
 //noinspection CssUnknownTarget
 @flairSprite2: url(%%spritesheet2%%);
 //noinspection CssUnknownTarget
-@banner: url(%%2011ha%%);
+@flairSprite3: url(%%spritesheet3%%);
+//noinspection CssUnknownTarget
+@banner: url(%%2011yn%%);
 //noinspection CssUnknownTarget
 @sideImage: url(%%atx%%);
 //noinspection CssUnknownTarget
