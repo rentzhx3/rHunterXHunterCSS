@@ -1,0 +1,300 @@
+@import (reference) "../../constants";
+
+@aura: @snoosprite -112px 0;
+
+@keyframes chains {
+  to {
+    background-position-y: 26px;
+  }
+}
+
+@keyframes aura {
+  to {
+    background-position-y: 120px;
+  }
+}
+
+@keyframes chain_vertical_grow {
+  to {
+    height: 175px;
+  }
+}
+
+@keyframes chain_tlbr_grow {
+  to {
+    height: 344px;
+  }
+}
+
+@pullHeight: -330px;
+@keyframes pullUp {
+  to {
+    top: @pullHeight;
+  }
+}
+
+@keyframes logoFall {
+  from {
+    top: @pullHeight;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  50% {
+    top: 30px;
+  }
+  75% {
+    top: 0;
+    transform: rotate(0deg);
+    transform-origin: top;
+  }
+  to {
+    transform: rotate(-6deg);
+    transform-origin: bottom;
+    top: 30px;
+  }
+}
+
+@keyframes pikaUp {
+  to {
+    background: @snoosprite -56px 0;
+  }
+}
+
+@keyframes pikaDown {
+  to {
+    background: @snoosprite 0 0;
+  }
+}
+
+@upChainBase: -131px;
+
+@upChainHeight: 101px;
+
+@keyframes upChain {
+  from {
+    top: @upChainBase + @upChainHeight;
+    height: 0;
+  }
+
+  to {
+    top: @upChainBase;
+    height: @upChainHeight;
+  }
+}
+
+// preload
+#header-img-a {
+  cursor: pointer;
+  &:before {
+    content: ' ';
+    background: @snoosprite;
+  }
+}
+
+@crossTime: 300ms;
+
+@pikaChainUpTime: 600ms;
+@upChainEnd: @crossTime + @pikaChainUpTime + 100ms;
+
+@trapStart: @upChainEnd;
+
+@pullStart: @trapStart+@crossTime*5+600ms;
+@pullDuration: 200ms;
+@pullEnd: @pullStart + @pullDuration;
+
+@chainFadeStart: @pullEnd+800ms;
+
+@chainFadeDuration: 400ms;
+
+@chainFadeEnd: @chainFadeStart + @chainFadeDuration;
+
+@releaseStart: @chainFadeEnd+600ms;
+@fallStart: @releaseStart+200ms;
+@fallDuration: 300ms;
+
+@upChainLeft: 36px;
+
+@auraOpacity: 0.4;
+#header-img-a:hover, #header-img-a.hover {
+  #header-img {
+    visibility: hidden !important;
+  }
+
+  &:before {
+    content: ' ';
+    background: @snoosprite 0 0;
+    animation: pikaUp 0ms @pikaChainUpTime forwards, pikaDown 0ms @chainFadeStart forwards;
+    width: 56px;
+    height: 80px;
+    top: -71px;
+    margin-top: 0;
+    position: absolute;
+    display: inline-block;
+  }
+  &:after {
+    // upwards chain
+    content: ' ';
+    width: 14px;
+    height: 0;
+    background: @chains repeat-y;
+    animation: chains linear 1s infinite reverse,
+    upChain @crossTime @pikaChainUpTime+50ms forwards,
+    upChain @chainFadeDuration @chainFadeStart forwards reverse;
+    display: block;
+    position: absolute;
+    left: @upChainLeft;
+    top: -100px;
+    z-index: 10;
+
+  }
+
+  & ~ .pagename {
+
+    a {
+      &:after {
+        transition: all 0ms;
+        transition-timing-function: steps(1);
+        animation: pullUp @pullDuration @pullStart forwards,
+        logoFall @fallDuration @fallStart forwards;
+        z-index: 1;
+      }
+      &:before {
+        // trbl chain
+        content: ' ';
+        width: 14px;
+        height: 0;
+        background: @chains repeat-y;
+        animation: chains linear 1s infinite,
+        chain_tlbr_grow @crossTime @trapStart+@crossTime forwards,
+        pullUp @pullDuration @pullStart forwards;;
+        display: block;
+        position: absolute;
+        left: 382px;
+        top: 48px;
+        transform: rotate(69.5deg);
+        transform-origin: top;
+        z-index: 10;
+      }
+
+    }
+    &:before {
+      // vertical chain
+      content: ' ';
+      width: 14px;
+      height: 0;
+      background: @chains repeat-y;
+      animation: chains linear 1s infinite,
+      chain_vertical_grow @crossTime @trapStart forwards,
+      pullUp @pullDuration @pullStart forwards;;
+      display: block;
+      position: absolute;
+      left: 228px;
+      top: 0;
+      z-index: 10;
+
+    }
+    &:after {
+      // tlbr chain
+      content: ' ';
+      width: 14px;
+      height: 0;
+      background: @chains repeat-y;
+      animation: chains linear 1s infinite,
+      chain_tlbr_grow @crossTime @trapStart+@crossTime*2 forwards,
+      pullUp @pullDuration @pullStart forwards;
+      display: block;
+      position: absolute;
+      left: 59px;
+      top: 33px;
+      transform: rotate(-68deg);
+      transform-origin: top;
+      z-index: 10;
+
+    }
+  }
+
+  & ~ .tabmenu li:nth-child(1)::before {
+    // up aura
+    content: ' ';
+    display: block;
+    visibility: visible;
+    width: 40px;
+    margin-top: -58px;
+    height: 0;
+    opacity: @auraOpacity;
+    z-index: 9;
+
+    background: @aura;
+    animation: aura 2s reverse forwards infinite linear,
+    upChain @crossTime @pikaChainUpTime+50ms forwards,
+    upChain @chainFadeDuration @chainFadeStart forwards reverse;;
+    position: absolute;
+    top: @upChainBase;
+    left: @upChainLeft - 12px;
+  }
+
+  & ~ .tabmenu li:nth-child(1)::after {
+    // vertical aura
+    content: ' ';
+    opacity: @auraOpacity;
+    display: block;
+    z-index: 9;
+    visibility: visible;
+    width: 40px;
+    margin-top: -60px;
+    margin-left: 190px;
+    height: 0;
+    background: @aura;
+    animation: aura 2s forwards infinite linear,
+    chain_vertical_grow @crossTime @trapStart forwards,
+    pullUp @pullDuration @pullStart forwards;;
+    position: absolute;
+    top: @upChainBase;
+    left: @upChainLeft - 12px;
+  }
+
+  & ~ .tabmenu::before {
+    // tlbr
+    content: ' ';
+    z-index: 9;
+    opacity: @auraOpacity;
+    display: block;
+    visibility: visible;
+    width: 40px;
+    margin-top: -50px;
+    margin-left: 190px;
+    height: 0;
+    background: @aura;
+    animation: aura 2s forwards infinite linear,
+    chain_tlbr_grow @crossTime @trapStart+@crossTime forwards,
+    pullUp @pullDuration @pullStart forwards;;
+    position: absolute;
+    left: 178px;
+    top: -93px;
+    transform: rotate(69.5deg);
+    transform-origin: top;
+  }
+  ~ .tabmenu::after {
+    // tlbr
+    content: ' ';
+    z-index: 9;
+    opacity: @auraOpacity;
+    display: block;
+    visibility: visible;
+    width: 40px;
+    margin-top: -50px;
+    margin-left: 190px;
+    height: 0;
+    background: @aura;
+    animation: aura 2s forwards infinite linear,
+    chain_tlbr_grow @crossTime @trapStart+@crossTime*2 forwards,
+    pullUp @pullDuration @pullStart forwards;
+    position: absolute;
+    left: -145px;
+    top: -107px;
+    transform: rotate(-68deg);
+    transform-origin: top;
+  }
+}
+
+//
