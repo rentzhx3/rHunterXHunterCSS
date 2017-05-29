@@ -1,0 +1,223 @@
+@import (reference) "../../constants";
+
+@aura: @fishsprite -112px 0;
+
+@spriteWidth: 10797px;
+@slideDuration: 12s;
+@waveCycle: 2s;
+@firstDelay: 200ms;
+
+@secondDelay: @firstDelay;
+
+@secondSlideDuration: @slideDuration;
+
+@fishWidth: 175px;
+
+@fishHeight: 86px;
+
+@steps: 61;
+
+@keyframes wave {
+  from {
+    background: @fishsprite 0 0;
+  }
+  to {
+    background: @fishsprite -(@spriteWidth) 0;
+  }
+}
+
+@keyframes move1 {
+  from {
+    opacity: 1;
+    left: -210px;
+  }
+  to {
+    left: 390px;
+  }
+  90% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0;
+  }
+}
+
+@keyframes move2 {
+  from {
+    opacity: 1;
+    left: -214px;
+  }
+  to {
+    left: 390px;
+  }
+  90% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0;
+  }
+}
+
+@keyframes vertical_wave {
+  0%, 40%, 80% {
+    margin-top: 0px;
+  }
+  20%, 60% {
+    margin-top: 20px;
+  }
+
+}
+
+@keyframes vertical_wave2 {
+  0%, 40%, 80% {
+    margin-top: 0px;
+  }
+  20%, 60% {
+    margin-top: -20px;
+  }
+
+}
+
+#header-bottom-left {
+  //display: flex;
+  //flex-direction: row;
+  .pagename {
+    margin-left: 100px;
+  }
+}
+
+// preload
+#header-img-a {
+  cursor: pointer;
+  // book
+  &:before {
+    content: ' ';
+    background: @snoosprite;
+    width: 80px !important;
+    margin-right: 0px;
+    height: 106px;
+    background: @snoosprite;
+    display: block;
+    opacity: 0;
+    transition: 600ms 400ms;
+    margin-top: 10px;
+    margin-left: 0px;
+    position: absolute;
+  }
+  // aura
+  &:after {
+    background: @snoosprite -160px 0px;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 80px;
+    height: 106px;
+    top: 0;
+    left: -3px;
+    transform: scale(1.1, 1.1);
+    transform-origin: left center;
+    opacity: 0;
+    z-index: -1;
+    transition: 1s;
+  }
+}
+
+@keyframes clipDamaged {
+  from {
+    opacity: 1;
+    padding-left: 0;
+  }
+  to {
+    opacity: 1;
+    padding-left: 336px;
+  }
+}
+
+@keyframes clipLogo {
+  from {
+    opacity: 1 !important;
+    padding-left: 336px;
+    margin-left: 0;
+    background: @logo 0 0;
+  }
+  to {
+    opacity: 1 !important;
+    background: @logo -336px 0;
+    padding-left: 0;
+    margin-left: 336px;
+  }
+}
+
+#header-img-a {
+  position: absolute;
+}
+
+#header-img-a:hover, #header-img-a.hover {
+  z-index: 1;
+
+  &:before {
+    opacity: 1;
+    margin-top: 2px;
+  }
+  &:after {
+    opacity: 0.2;
+    transition: 1s;
+  }
+  & ~ .pagename {
+    // logo
+    @clipDuration: 6.6s;
+    @clipDelay: 3.2s;
+    a {
+      &::before {
+        opacity: 0;
+        content: ' ';
+        background: @damagedLogo;
+        padding-left: 336px;
+        padding-top: 145px;
+        top: 30px;
+        z-index: 1;
+        position: absolute;
+        animation: clipDamaged @clipDuration @clipDelay linear forwards;
+      }
+      &:after {
+        animation: clipLogo @clipDuration @clipDelay linear forwards;
+      }
+    }
+
+    &:after {
+      pointer-events: none;
+
+      content: ' ';
+      width: @fishWidth;
+      height: @fishHeight;
+      opacity: 0;
+      background: @fishsprite;
+      animation: wave @waveCycle steps(@steps) infinite alternate, move1 @slideDuration @firstDelay linear forwards, vertical_wave ease-in-out @slideDuration @secondDelay forwards infinite;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+
+    }
+    &:before {
+      pointer-events: none;
+
+      content: ' ';
+      width: @fishWidth;
+      height: @fishHeight;
+      opacity: 0;
+      background: @fishsprite;
+      animation: wave @waveCycle + 500ms 800ms steps(@steps) infinite alternate, move2 @secondSlideDuration @secondDelay linear forwards, vertical_wave2 ease-in-out @secondSlideDuration @secondDelay forwards infinite;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      z-index: 10;
+
+    }
+
+  }
+}
+
+//
