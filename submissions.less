@@ -168,8 +168,14 @@
     .stickied-tagline {
       display: none;
     }
-
   }
+  &.spoiler {
+    .expando-gate.expando-gate--interstitial {
+      max-height: 75px;
+      background: @spoilerInterstitialBg;
+    }
+  }
+
   .score.likes {
     color: dodgerblue;
   }
