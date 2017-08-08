@@ -6,7 +6,6 @@
 @import "animations/easter-egg";
 @import "animations/mail";
 @import "animations/votes";
-@import "animations/snoo/chrollo";
 @import "users";
 @import "spoiler-tags";
 @import "res-tweaks";
@@ -54,4 +53,9 @@ body {
 body:not(.submit-page) .side ~ .content {
   //sidebar width+ sidebar padding +10px margin
   margin-right: @sidebarWidth + (@sidebarPadding*2)+10px !important;
+}
+
+// temporary fix for snoo positioning
+#header-img {
+  margin-top: -7px;
 }
